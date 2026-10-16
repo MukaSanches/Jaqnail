@@ -1,0 +1,8 @@
+{
+  "distribution_validated": false,
+  "product_sha256": null,
+  "android_installation": false,
+  "persistent_signing": false,
+  "functional_acceptance": false,
+  "reason": "Pre-release validation in progress; do not publish v1.0.0 until real acceptance and owner-controlled signing are available."
+}

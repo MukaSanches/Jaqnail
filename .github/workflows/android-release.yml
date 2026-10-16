@@ -6,63 +6,86 @@ permissions:
   contents: write
 jobs:
   release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      EXPO_NO_TELEMETRY: '1'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '24.19.0'
           cache: npm
-          cache-dependency-path: package-lock.json
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
       - uses: android-actions/setup-android@v3
-      - name: Check signing configuration and project
+      - name: Validate release gate and version
+        run: python3 scripts/release_gate.py "$GITHUB_REF_NAME"
+      - name: Check persistent signing secrets
         env:
-          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
-          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
-          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+          KEYSTORE: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: |
-          test -f package-lock.json || { echo 'Missing package-lock.json'; exit 1; }
-          test -n "$ANDROID_KEYSTORE_BASE64" && test -n "$ANDROID_KEYSTORE_PASSWORD" && test -n "$ANDROID_KEY_ALIAS" && test -n "$ANDROID_KEY_PASSWORD" || { echo 'Configure the four Android signing secrets. No release will be published.'; exit 1; }
+          test -n "$KEYSTORE" && test -n "$STORE_PASSWORD" && test -n "$KEY_ALIAS" && test -n "$KEY_PASSWORD" || { echo 'Missing persistent signing configuration'; exit 1; }
       - run: npm ci
-      - run: npm run typecheck --if-present
-      - run: npm run lint --if-present
-      - name: Run test suite
-        run: npm run test:ci --if-present
-      - name: Generate native project
-        run: npx expo prebuild --platform android --non-interactive
-      - name: Inject permanent release signing
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm run test:ci
+      - run: python3 scripts/check_coverage.py
+      - run: npm run prebuild
+      - name: Configure permanent signing
         env:
           ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          umask 077
+          printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/jaqnail.jks"
+          echo "JAQNAIL_KEYSTORE_FILE=$RUNNER_TEMP/jaqnail.jks" >> "$GITHUB_ENV"
+          python3 scripts/inject_release_signing.py android/app/build.gradle
+      - name: Build signed release
+        env:
           JAQNAIL_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
           JAQNAIL_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
           JAQNAIL_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
-        run: |
-          echo "$ANDROID_KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/jaqnail.jks"
-          echo "JAQNAIL_KEYSTORE_FILE=$RUNNER_TEMP/jaqnail.jks" >> "$GITHUB_ENV"
-          python3 scripts/inject_release_signing.py android/app/build.gradle
-      - name: Compile signed release APK
         working-directory: android
-        run: chmod +x gradlew && ./gradlew :app:assembleRelease --no-daemon
-      - name: Create named artifact and checksum
+        run: ./gradlew :app:assembleRelease -PreactNativeArchitectures=arm64-v8a,x86_64 --no-daemon --max-workers=2
+      - name: Check signature
         run: |
-          set -eu
-          VERSION="${GITHUB_REF_NAME#v}"
-          mkdir -p dist
-          SRC="$(find android/app/build/outputs/apk/release -name '*.apk' -type f | head -n1)"
-          test -s "$SRC"
-          cp "$SRC" "dist/Jaqnail-v${VERSION}.apk"
-          (cd dist && sha256sum *.apk > SHA256SUMS.txt)
-      - name: Publish GitHub Release (tag only)
-        if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v3
+          "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose --print-certs android/app/build/outputs/apk/release/app-release.apk | tee signature.txt
+          if grep -q 'CN=Android Debug' signature.txt; then echo 'Debug certificate forbidden'; exit 1; fi
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          arch: x86_64
+          profile: pixel_6
+          script: python3 scripts/android_smoke.py android/app/build/outputs/apk/release/app-release.apk
+      - name: Name and checksum validated APK
+        run: |
+          mkdir -p dist/release
+          cp android/app/build/outputs/apk/release/app-release.apk "dist/release/Jaqnail-${GITHUB_REF_NAME}.apk"
+          (cd dist/release && sha256sum *.apk > SHA256SUMS.txt)
+      - uses: softprops/action-gh-release@v3
         with:
           files: |
-            dist/Jaqnail-*.apk
-            dist/SHA256SUMS.txt
+            dist/release/Jaqnail-*.apk
+            dist/release/SHA256SUMS.txt
+          body_path: docs/RELEASE_REPORT.md
           fail_on_unmatched_files: true
-          generate_release_notes: true
+      - name: Verify published download
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p "$RUNNER_TEMP/download-check"
+          gh release download "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --dir "$RUNNER_TEMP/download-check"
+          (cd "$RUNNER_TEMP/download-check" && sha256sum --check SHA256SUMS.txt)
+      - name: Remove ephemeral key copy
+        if: always()
+        run: rm -f "$RUNNER_TEMP/jaqnail.jks"

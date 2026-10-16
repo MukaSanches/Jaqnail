@@ -1,65 +1,44 @@
-<div align="center">
+<p align="center"><img src="branding/jaqnail-logo.svg" alt="Jaqnail" width="480" /></p>
 
-<img src="branding/jaqnail-logo.svg" alt="Jaqnail — beleza, agenda e gestão" width="520" />
+# Jaqnail
 
-<img src="branding/jaqnail-banner.svg" alt="Jaqnail: sua agenda, seu talento" width="100%" />
+Agenda e gestão para manicures e nail designers. **Desenvolvido por Samuel Sanches.** Android, offline, sem login e sem recursos pagos.
 
-### A agenda que valoriza o seu talento
-**Um aplicativo Android de organização profissional para manicures e nail designers.**
+> **Estado: v1.0.0 em desenvolvimento e validação.** Não há APK estável anunciado. Consulte o [relatório real](docs/RELEASE_REPORT.md) antes de instalar qualquer artefato de teste.
 
-[![Android CI](https://github.com/MukaSanches/Jaqnail/actions/workflows/android-ci.yml/badge.svg)](https://github.com/MukaSanches/Jaqnail/actions/workflows/android-ci.yml)
-[![GitHub Releases](https://img.shields.io/github/v/release/MukaSanches/Jaqnail?display_name=tag&label=vers%C3%A3o)](https://github.com/MukaSanches/Jaqnail/releases)
-![Status](https://img.shields.io/badge/status-em%20desenvolvimento-6c455d)
+[Releases e downloads publicados](https://github.com/MukaSanches/Jaqnail/releases) · [Cobertura rastreável](docs/PARITY_MATRIX.csv) · [Guia de uso](docs/USER_GUIDE_PTBR.md) · [Privacidade](docs/PRIVACY.md)
 
-[**📥 VER RELEASES E BAIXAR APK**](https://github.com/MukaSanches/Jaqnail/releases) · [Funcionalidades](#funcionalidades-planejadas) · [Como contribuir](#desenvolvimento)
+![Identidade conceitual — não é captura do aplicativo](branding/jaqnail-banner.svg)
 
-> **Status:** repositório em preparação. Nenhum APK de produção foi publicado ainda. Assim que a versão 1.0.0 for compilada, testada e assinada, o download aparecerá em **Releases**.
+## Implementação
 
-</div>
+- Cadastros de clientes, serviços e materiais; busca, edição, arquivamento e estoque.
+- Agenda diária/semanal; assistente com múltiplos serviços, quantidades, descontos e pagamento.
+- Conflitos, sugestões, recorrência semanal, cópia, cancelamento e reativação.
+- Estatísticas, privacidade financeira, temas claro/escuro, preferências e formatos.
+- SQLite transacional, backup com prévia/rollback/recuperação, exportações CSV.
+- Alertas locais opcionais; WhatsApp com consentimento e prévia, sem envio automático.
 
----
-
-## O que é o Jaqnail?
-
-O **Jaqnail** é um aplicativo de gestão para profissionais de unhas, criado para simplificar a agenda e dar visibilidade ao dia a dia do negócio. O projeto tem identidade visual própria, foco em uso offline, rapidez e recursos essenciais gratuitos.
-
-### Funcionalidades planejadas
-
-| Área | Planejamento para a v1 |
-|---|---|
-| **Agenda** | Visualização diária e semanal, calendário, criação e edição de horários, conflito e sugestão de encaixes. |
-| **Clientes** | Cadastro, busca, histórico de atendimentos e integração com WhatsApp. |
-| **Serviços** | Catálogo de serviços, preços, duração e múltiplos serviços por horário. |
-| **Materiais** | Controle de estoque, estoque mínimo e alertas visuais. |
-| **Financeiro** | Resumos de faturamento e estatísticas por mês e ano. |
-| **Rotina** | Agendamentos recorrentes, duplicação, notificações e preferências. |
-| **Seus dados** | Uso offline, exportação/importação de backup e proteção contra perda acidental. |
-| **Experiência** | Tema claro/escuro, pt-BR, interface responsiva e acessível. |
-
-As funcionalidades acima descrevem o **escopo previsto**, não uma entrega já validada. O status e os testes reais serão registrados em `docs/RELEASE_REPORT.md` quando houver uma versão publicável.
-
-## Baixar e instalar
-
-1. Acesse **[Releases](https://github.com/MukaSanches/Jaqnail/releases)**.
-2. Quando houver uma versão publicada, abra a Release mais recente e baixe o arquivo `Jaqnail-vX.Y.Z.apk` na seção **Assets**.
-3. No Android, abra o APK e autorize a instalação dessa origem, se necessário.
-4. Confira o `SHA256SUMS.txt` disponibilizado junto ao instalador.
-
-**Não instale APKs de fontes desconhecidas que se apresentem como Jaqnail.** A fonte oficial de distribuição deste projeto é este repositório.
-
-## Identidade visual
-
-A marca usa **ameixa profunda, rosé, creme e dourado fosco**, com monograma de unha estilizada. Os vetores autorais estão em [`branding/`](branding/); as ilustrações conceituais não devem ser confundidas com screenshots de aplicativo em execução.
+As funcionalidades têm graus diferentes de validação. Os testes executados e limitações estão no relatório. Inglês é parcial; equivalência dinâmica integral com a referência não foi atestada.
 
 ## Desenvolvimento
 
-Stack planejada: React Native, Expo, TypeScript e SQLite local, com builds Android por GitHub Actions. O projeto terá auditoria de acessibilidade, testes automatizados e Releases assinadas antes da distribuição estável. Contribuições devem respeitar os padrões descritos em [`AGENTS.md`](AGENTS.md).
+Node 24.x, JDK 17, Android SDK 36, Build Tools 36.0.0, NDK 27.1.12297006.
 
-## Autoria
+```sh
+npm ci
+npm run typecheck
+npm run lint
+npm run test:ci
+npm run prebuild
+cd android
+./gradlew :app:assembleDebug --no-daemon
+```
 
-**Desenvolvido por Samuel Sanches**  
-Projeto Jaqnail · [GitHub de Samuel Sanches](https://github.com/MukaSanches)
+Para executar: `npm start` ou `npm run android` com emulador/aparelho. O projeto nativo é gerado pelo Expo; fontes/lockfile e configuração são versionados. A chave debug gerada pelo template serve apenas para testes. Release requer os quatro secrets descritos em [assinatura](docs/SIGNING.md), validação e evidências do commit.
 
-> Jaqnail é um produto independente. Não possui vínculo ou afiliação com o aplicativo AppNail. Referências externas de engenharia reversa servem ao estudo de funcionalidades, sem licença para incorporar marcas, imagens ou códigos proprietários de terceiros.
+## Documentação
 
-**Licenciamento:** a licença de distribuição do código será definida pelo titular do repositório antes da abertura de contribuições externas.
+[Arquitetura](docs/ARCHITECTURE.md) · [Modelo de dados](docs/DATA_MODEL.md) · [Funcionalidades e lacunas](docs/FEATURE_MATRIX.md) · [Plano operacional](docs/IMPLEMENTATION_PLAN.md).
+
+Não foram incorporados código proprietário, artes, marcas ou credenciais da referência. Nenhuma licença de distribuição de código foi escolhida em nome do proprietário.

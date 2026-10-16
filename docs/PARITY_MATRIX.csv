@@ -1,0 +1,475 @@
+id,kind,name,evidence,classification,implementation,test,status,notes
+SCR-001,screen,OnboardingScreen,"Hermes 26577,26588,26593,26598,26609",app-owned/business,src/features/onboarding/Onboarding.tsx,src/tests/app.ui.test.tsx,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-002,screen,SchedulesScreen,"Hermes 23869,23874,23875,23880,23882,23883,23884,23886,23889,23897",app-owned/business,src/features/agenda/Agenda.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-003,screen,SchedulingFormScreen,"Hermes 25016,25018,25019,25020,25024,25025,25029,25041,25053,25062",app-owned/business,src/features/agenda/Wizard.tsx,src/tests/app.ui.test.tsx,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-004,screen,StepClient,"Hermes 25684,25686,25687,25688,25689",app-owned/business,src/features/agenda/Wizard.tsx,src/tests/app.ui.test.tsx,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-005,screen,StepServices,"Hermes 25700,25702,25703,25704,25706",app-owned/business,src/features/agenda/Wizard.tsx,src/tests/app.ui.test.tsx,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-006,screen,StepConfirm,"Hermes 25713,25717,25718",app-owned/business,src/features/agenda/Wizard.tsx,src/tests/app.ui.test.tsx,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-007,screen,ScheduleDetailsScreen,"Hermes 25726,25735,25736,25740,25741,25742,25751",app-owned/business,src/features/agenda/Details.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-008,screen,SelectServiceScreen,"Hermes 25757,25759,25760,25763,25772",app-owned/business,src/features/catalog/Catalog.tsx,src/tests/app.ui.test.tsx,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-009,screen,SelectClientScreen,"Hermes 25778,25781,25782,25785",app-owned/business,src/features/catalog/Catalog.tsx,src/tests/app.ui.test.tsx,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-010,screen,SelectRepeatScheduleScreen,"Hermes 25794,25807,25808,25809,25811,25820,25822",app-owned/business,src/features/agenda/Agenda.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-011,screen,ClientsScreen,"Hermes 23498,23502,23519",app-owned/business,src/features/catalog/Catalog.tsx,src/tests/app.ui.test.tsx,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-012,screen,ClientFormScreen,"Hermes 23524,23538,23545,23546",app-owned/business,src/features/catalog/Catalog.tsx,src/tests/app.ui.test.tsx,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-013,screen,ServicesScreen,"Hermes 22034,22038,22075",app-owned/business,src/features/catalog/Catalog.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-014,screen,ServiceFormScreen,"Hermes 22080,22744,22750,22751",app-owned/business,src/features/catalog/Catalog.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-015,screen,MaterialsScreen,"Hermes 23643,23646,23647,23648,23649,23650,23662,23663,23667,23676,23713",app-owned/business,src/features/catalog/Catalog.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-016,screen,MaterialFormScreen,"Hermes 23734,23747,23752,23753",app-owned/business,src/features/catalog/Catalog.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-017,screen,StatisticsOverviewScreen,"Hermes 25990,25994,25996,25997,26004,26012,26017,26018,26019,26020,26022,26034",app-owned/business,src/features/statistics/Statistics.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-018,screen,StatisticsMonthScreen,"Hermes 26046,26050,26052,26053,26054,26057",app-owned/business,src/features/statistics/Statistics.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-019,screen,SettingsScreen,"Hermes 25841,25847,25848,25849,25853,25857,25858,25863,25878,25881",app-owned/business,src/features/settings/Settings.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-020,screen,ChangeThemeModal,"Hermes 25887,25889,25893",app-owned/business,src/features/settings/Settings.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-021,screen,SelectLanguageScreen,"Hermes 25912,25920,25921,25928,25931",app-owned/business,src/features/settings/Settings.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-022,screen,SelectCurrencyScreen,"Hermes 25940,25948,25929,25931",app-owned/business,src/features/settings/Settings.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-023,screen,SelectDateFormatScreen,"Hermes 25956,25960",app-owned/business,src/features/settings/Settings.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-024,screen,BackupScreen,"Hermes 26066,26077,26082,26093,26106,26109,26110,26113,26114,26117",app-owned/business,src/features/backup/Backup.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-025,screen,BackupReminderModal,"Hermes 25968,25974",app-owned/business,src/features/backup/Backup.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+SCR-026,screen,SubscriptionScreen,"Hermes 20860,20869,16030,16034,21790",app-owned/business,src/features/settings/Settings.tsx,,implemented,Implementação própria; validação Android e comparação dinâmica pendentes.
+H-16014,handler,createIconSetFromFontello,Hermes F#16014,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-16049,handler,setSubscribed,Hermes F#16049,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-16050,handler,setRemovedAds,Hermes F#16050,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-16460,handler,setAllowSharingStoreAccount,Hermes F#16460,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16463,handler,setSimulatesAskToBuyInSandbox,Hermes F#16463,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-16475,handler,setAppstackAttributionParams,Hermes F#16475,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16490,handler,setDebugLogsEnabled,Hermes F#16490,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16493,handler,setLogLevel,Hermes F#16493,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16496,handler,setLogHandler,Hermes F#16496,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16566,handler,setAttributes,Hermes F#16566,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16569,handler,setEmail,Hermes F#16569,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16572,handler,setPhoneNumber,Hermes F#16572,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16575,handler,setDisplayName,Hermes F#16575,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16578,handler,setPushToken,Hermes F#16578,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16581,handler,setProxyURLString,Hermes F#16581,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16587,handler,setAdjustID,Hermes F#16587,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16590,handler,setAppsflyerID,Hermes F#16590,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16593,handler,setFBAnonymousID,Hermes F#16593,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16596,handler,setMparticleID,Hermes F#16596,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16599,handler,setCleverTapID,Hermes F#16599,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16602,handler,setMixpanelDistinctID,Hermes F#16602,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-16605,handler,setFirebaseAppInstanceID,Hermes F#16605,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16608,handler,setTenjinAnalyticsInstallationID,Hermes F#16608,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-16611,handler,setKochavaDeviceID,Hermes F#16611,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16614,handler,setOnesignalID,Hermes F#16614,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16617,handler,setOnesignalUserID,Hermes F#16617,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16620,handler,setAirshipChannelID,Hermes F#16620,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16623,handler,setMediaSource,Hermes F#16623,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16626,handler,setMediaCampaign,Hermes F#16626,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16629,handler,setCampaign,Hermes F#16629,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16632,handler,setAdGroup,Hermes F#16632,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16635,handler,setAd,Hermes F#16635,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16638,handler,setKeyword,Hermes F#16638,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16641,handler,setCreative,Hermes F#16641,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16644,handler,setAppsFlyerConversionData,Hermes F#16644,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16785,handler,deleteProperty,Hermes F#16785,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16798,handler,setPrototypeOf,Hermes F#16798,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-17221,handler,selectOption,Hermes F#17221,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-17448,handler,setMutedOverride,Hermes F#17448,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-17619,handler,selectTab,Hermes F#17619,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-17679,handler,onWalletButtonReady,Hermes F#17679,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-17932,handler,onPurchase,Hermes F#17932,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-17933,handler,onButtonAction,Hermes F#17933,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-17935,handler,updateSatisfaction,Hermes F#17935,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-18095,handler,onNavigateToUrlClicked,Hermes F#18095,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-18097,handler,onVisitCustomerCenterClicked,Hermes F#18097,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-18100,handler,onRestorePurchasesClicked,Hermes F#18100,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-18101,handler,onActionTriggered,Hermes F#18101,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-18109,handler,onError,Hermes F#18109,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-18132,handler,onClose,Hermes F#18132,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-18700,handler,onLoadingComplete,Hermes F#18700,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-18701,handler,onEmailChange,Hermes F#18701,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-18702,handler,onPaymentInfoChange,Hermes F#18702,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-18703,handler,onAddressInfoChange,Hermes F#18703,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-18707,handler,onExpressCheckoutElementSubmit,Hermes F#18707,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-18719,handler,onChange,Hermes F#18719,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-18773,handler,onDismiss,Hermes F#18773,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-19640,handler,onContinue,Hermes F#19640,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-19914,handler,setLogLevel,Hermes F#19914,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-19915,handler,setLogHandler,Hermes F#19915,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20001,handler,applyUpdates,Hermes F#20001,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20054,handler,onReady,Hermes F#20054,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20093,handler,handleConnect,Hermes F#20093,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20192,handler,updateElementsConfiguration,Hermes F#20192,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20194,handler,createPaymentElement,Hermes F#20194,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20196,handler,createAddressElement,Hermes F#20196,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20197,handler,createExpressCheckoutElement,Hermes F#20197,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20198,handler,createLinkAuthenticationElement,Hermes F#20198,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20355,handler,setAttributes,Hermes F#20355,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20419,handler,updateUser,Hermes F#20419,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20451,handler,updatePurchase,Hermes F#20451,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20514,handler,onPurchaseClicked,Hermes F#20514,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20515,handler,onExitBack,Hermes F#20515,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20516,handler,onBackClicked,Hermes F#20516,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20517,handler,onPurchaseClicked,Hermes F#20517,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20518,handler,onError,Hermes F#20518,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20550,handler,onFinished,Hermes F#20550,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20551,handler,onError,Hermes F#20551,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20554,handler,onButtonReady,Hermes F#20554,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20569,handler,onValidPurchase,Hermes F#20569,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20570,handler,onFailedPurchase,Hermes F#20570,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20571,handler,onCancel,Hermes F#20571,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20592,handler,createCheckoutOnCloseHandler,Hermes F#20592,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20595,handler,createCheckoutOnFinishedHandler,Hermes F#20595,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20600,handler,createCheckoutOnErrorHandler,Hermes F#20600,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20614,handler,setAttributes,Hermes F#20614,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20651,handler,setLogLevel,Hermes F#20651,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20652,handler,setLogHandler,Hermes F#20652,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20653,handler,setPlatformInfo,Hermes F#20653,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20674,handler,setAttributes,Hermes F#20674,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20678,handler,setEmail,Hermes F#20678,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20682,handler,setPhoneNumber,Hermes F#20682,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20686,handler,setDisplayName,Hermes F#20686,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20733,handler,applyPresentedOfferingContextToOffering,Hermes F#20733,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20743,handler,setReservedCustomerAttribute,Hermes F#20743,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20747,handler,createNativePurchaseParams,Hermes F#20747,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20750,handler,handleError,Hermes F#20750,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20753,handler,setLogLevel,Hermes F#20753,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20754,handler,setLogHandler,Hermes F#20754,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20757,handler,setProxyUrl,Hermes F#20757,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20774,handler,handlePurchase,Hermes F#20774,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20777,handler,handleFailedPurchase,Hermes F#20777,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20778,handler,handleCancel,Hermes F#20778,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20795,handler,handleCancel,Hermes F#20795,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20796,handler,handleFailedPurchase,Hermes F#20796,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20797,handler,handlePurchase,Hermes F#20797,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20802,handler,onPress,Hermes F#20802,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20804,handler,onPress,Hermes F#20804,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20805,handler,onDismiss,Hermes F#20805,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20869,handler,handlePressBuyButton,Hermes F#20869,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20870,handler,selectPlan,Hermes F#20870,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20875,handler,onPress,Hermes F#20875,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20876,handler,onPress,Hermes F#20876,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20877,handler,onClose,Hermes F#20877,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20934,handler,setUserProps,Hermes F#20934,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20951,handler,setServerURL,Hermes F#20951,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20952,handler,setLoggingEnabled,Hermes F#20952,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20953,handler,setFlushOnBackground,Hermes F#20953,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20954,handler,setUseIpAddressForGeolocation,Hermes F#20954,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20955,handler,setFlushBatchSize,Hermes F#20955,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20967,handler,setGroup,Hermes F#20967,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20971,handler,deleteGroup,Hermes F#20971,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-20996,handler,setOnce,Hermes F#20996,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-21005,handler,deleteUser,Hermes F#21005,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-21009,handler,setOnce,Hermes F#21009,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-21048,handler,setLoggingEnabled,Hermes F#21048,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21049,handler,setServerURL,Hermes F#21049,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21050,handler,setUseIpAddressForGeolocation,Hermes F#21050,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21051,handler,setFlushBatchSize,Hermes F#21051,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21128,handler,setOnce,Hermes F#21128,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21160,handler,deleteUser,Hermes F#21160,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21196,handler,setGroup,Hermes F#21196,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21209,handler,deleteGroup,Hermes F#21209,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21239,handler,handleBatchError,Hermes F#21239,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-21256,handler,updateQueueInStorage,Hermes F#21256,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21309,handler,updateDeviceId,Hermes F#21309,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21315,handler,updateDistinctId,Hermes F#21315,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21322,handler,updateUserId,Hermes F#21322,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21332,handler,updateSuperProperties,Hermes F#21332,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21342,handler,updateTimeEvents,Hermes F#21342,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21352,handler,updateOptedOut,Hermes F#21352,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21362,handler,saveQueue,Hermes F#21362,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21370,handler,updateAppHasOpenedBefore,Hermes F#21370,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21424,handler,setItem,Hermes F#21424,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21438,handler,setItem,Hermes F#21438,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21461,handler,setLoggingEnabled,Hermes F#21461,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-21463,handler,setServerURL,Hermes F#21463,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-21465,handler,setUseIpAddressForGeolocation,Hermes F#21465,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-21467,handler,setFlushBatchSize,Hermes F#21467,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-21469,handler,setFlushInterval,Hermes F#21469,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-21602,handler,handleError,Hermes F#21602,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
+H-21607,handler,updateContext,Hermes F#21607,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21677,handler,updateContext,Hermes F#21677,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21795,handler,handleRestore,Hermes F#21795,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21825,handler,selectOrdinal,Hermes F#21825,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21880,handler,setDefaults,Hermes F#21880,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21887,handler,setI18n,Hermes F#21887,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21953,handler,createStyles,Hermes F#21953,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21971,handler,createService,Hermes F#21971,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21977,handler,updateService,Hermes F#21977,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21981,handler,deleteService,Hermes F#21981,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21985,handler,setServices,Hermes F#21985,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21991,handler,createService,Hermes F#21991,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21995,handler,updateService,Hermes F#21995,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21999,handler,deleteService,Hermes F#21999,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-22003,handler,setServices,Hermes F#22003,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-22011,handler,saveAll,Hermes F#22011,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-22038,handler,openServiceForm,Hermes F#22038,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-22040,handler,onUpgradePress,Hermes F#22040,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-22041,handler,onPress,Hermes F#22041,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-22043,handler,onPress,Hermes F#22043,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-22044,handler,onPress,Hermes F#22044,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-22049,handler,onPress,Hermes F#22049,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-22053,handler,createStyles,Hermes F#22053,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-22063,handler,createStyles,Hermes F#22063,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-22069,handler,createStyles,Hermes F#22069,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-22086,handler,onChangeText,Hermes F#22086,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-22117,handler,setCustomValidity,Hermes F#22117,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22121,handler,updateMounted,Hermes F#22121,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22145,handler,createFormControl,Hermes F#22145,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22155,handler,updateErrors,Hermes F#22155,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22157,handler,updateValidAndValue,Hermes F#22157,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22158,handler,updateTouchAndDirty,Hermes F#22158,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22178,handler,setFieldValue,Hermes F#22178,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22183,handler,setValues,Hermes F#22183,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22184,handler,setValue,Hermes F#22184,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22189,handler,onChange,Hermes F#22189,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22205,handler,setError,Hermes F#22205,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22220,handler,handleSubmit,Hermes F#22220,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22228,handler,setFocus,Hermes F#22228,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22322,handler,createSubject,Hermes F#22322,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22361,handler,updateFieldArrayRootError,Hermes F#22361,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22367,handler,setCustomValidity,Hermes F#22367,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22382,handler,updateAt,Hermes F#22382,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22614,handler,onType,Hermes F#22614,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22694,handler,onChangeText,Hermes F#22694,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22707,handler,updateValue,Hermes F#22707,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22738,handler,createStyles,Hermes F#22738,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-22750,handler,onDelete,Hermes F#22750,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-22751,handler,handleDeletePress,Hermes F#22751,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-22798,handler,setCustomValidity,Hermes F#22798,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-22910,handler,setFocus,Hermes F#22910,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23045,handler,createValidation,Hermes F#23045,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23048,handler,createError,Hermes F#23048,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23049,handler,handleResult,Hermes F#23049,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23050,handler,handleError,Hermes F#23050,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23080,handler,setLocale,Hermes F#23080,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23302,handler,setFields,Hermes F#23302,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23423,handler,createStyles,Hermes F#23423,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23441,handler,createClient,Hermes F#23441,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23447,handler,updateClient,Hermes F#23447,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23451,handler,deleteClient,Hermes F#23451,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23455,handler,setClients,Hermes F#23455,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23461,handler,createClient,Hermes F#23461,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23465,handler,updateClient,Hermes F#23465,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23469,handler,deleteClient,Hermes F#23469,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23473,handler,setClients,Hermes F#23473,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23481,handler,saveAll,Hermes F#23481,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23502,handler,openClientForm,Hermes F#23502,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23503,handler,handleSchedule,Hermes F#23503,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23505,handler,onUpgradePress,Hermes F#23505,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23506,handler,onPress,Hermes F#23506,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23508,handler,onPress,Hermes F#23508,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23509,handler,onPress,Hermes F#23509,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23510,handler,onPress,Hermes F#23510,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23517,handler,createStyles,Hermes F#23517,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23530,handler,onChangeText,Hermes F#23530,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23545,handler,onDelete,Hermes F#23545,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23546,handler,handleDeletePress,Hermes F#23546,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23553,handler,createStyles,Hermes F#23553,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23571,handler,createMaterial,Hermes F#23571,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23577,handler,updateMaterial,Hermes F#23577,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23583,handler,updateMaterialStock,Hermes F#23583,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23587,handler,deleteMaterial,Hermes F#23587,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23591,handler,setMaterials,Hermes F#23591,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23597,handler,createMaterial,Hermes F#23597,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23601,handler,updateMaterial,Hermes F#23601,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23605,handler,updateMaterialStock,Hermes F#23605,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23609,handler,deleteMaterial,Hermes F#23609,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23613,handler,setMaterials,Hermes F#23613,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23621,handler,saveAll,Hermes F#23621,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23632,handler,updateStock,Hermes F#23632,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23646,handler,openMaterialForm,Hermes F#23646,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23647,handler,increaseStock,Hermes F#23647,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23648,handler,decreaseStock,Hermes F#23648,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23650,handler,saveStockEdit,Hermes F#23650,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23652,handler,onUpgradePress,Hermes F#23652,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23654,handler,onPress,Hermes F#23654,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23655,handler,onIncreaseStock,Hermes F#23655,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23656,handler,onDecreaseStock,Hermes F#23656,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23657,handler,onStartEditingStock,Hermes F#23657,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23658,handler,onSaveStockEdit,Hermes F#23658,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23659,handler,onAdd,Hermes F#23659,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23669,handler,onPress,Hermes F#23669,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23673,handler,createStyles,Hermes F#23673,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23718,handler,createStyles,Hermes F#23718,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23723,handler,createStyles,Hermes F#23723,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23731,handler,createStyles,Hermes F#23731,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23752,handler,onDelete,Hermes F#23752,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23753,handler,handleDeletePress,Hermes F#23753,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23760,handler,createStyles,Hermes F#23760,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23782,handler,createSchedule,Hermes F#23782,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23788,handler,updateSchedule,Hermes F#23788,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23792,handler,deleteSchedule,Hermes F#23792,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23798,handler,toggleScheduleStatus,Hermes F#23798,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23802,handler,setSchedules,Hermes F#23802,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23808,handler,createSchedule,Hermes F#23808,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23812,handler,updateSchedule,Hermes F#23812,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23816,handler,deleteSchedule,Hermes F#23816,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23820,handler,toggleScheduleStatus,Hermes F#23820,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23824,handler,setSchedules,Hermes F#23824,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23847,handler,saveAll,Hermes F#23847,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23862,handler,toggleCancelStatus,Hermes F#23862,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23874,handler,goToStatistics,Hermes F#23874,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23875,handler,goToSchedulingForm,Hermes F#23875,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23876,handler,openStatisticsFromAgenda,Hermes F#23876,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23877,handler,openSchedulingFromFab,Hermes F#23877,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23878,handler,openSchedulingFromEmptyCta,Hermes F#23878,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23879,handler,openSchedulingFromListShortcut,Hermes F#23879,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23880,handler,setViewMode,Hermes F#23880,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23882,handler,goToPreviousDate,Hermes F#23882,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23883,handler,goToNextDate,Hermes F#23883,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23884,handler,openDatePicker,Hermes F#23884,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23886,handler,openDetails,Hermes F#23886,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23892,handler,onSelectDate,Hermes F#23892,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23893,handler,onPressEmptySlot,Hermes F#23893,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23915,handler,onLayout,Hermes F#23915,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23917,handler,onPress,Hermes F#23917,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23924,handler,createStyles,Hermes F#23924,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-23980,handler,setRequestConfiguration,Hermes F#23980,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-23981,handler,openAdInspector,Hermes F#23981,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-23982,handler,openDebugMenu,Hermes F#23982,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-23983,handler,setAppVolume,Hermes F#23983,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-23984,handler,setAppMuted,Hermes F#23984,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24276,handler,setAll,Hermes F#24276,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24474,handler,onLoad,Hermes F#24474,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24475,handler,onError,Hermes F#24475,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24476,handler,onAbort,Hermes F#24476,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24477,handler,onTimeout,Hermes F#24477,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24511,handler,setAllVendorConsents,Hermes F#24511,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24513,handler,setAllVendorsDisclosed,Hermes F#24513,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24515,handler,setAllVendorsAllowed,Hermes F#24515,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24517,handler,setAllVendorLegitimateInterests,Hermes F#24517,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24519,handler,setAllPurposeConsents,Hermes F#24519,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24521,handler,setAllPurposeLegitimateInterests,Hermes F#24521,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24523,handler,setAllSpecialFeatureOptins,Hermes F#24523,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24525,handler,setAll,Hermes F#24525,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24546,handler,createForAdRequest,Hermes F#24546,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24590,handler,createForAdRequest,Hermes F#24590,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24600,handler,createForAdRequest,Hermes F#24600,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24610,handler,createForAdRequest,Hermes F#24610,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24624,handler,onNativeEvent,Hermes F#24624,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24646,handler,onNativeAdEvent,Hermes F#24646,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24651,handler,createForAdRequest,Hermes F#24651,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24703,handler,createForAdRequest,Hermes F#24703,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-24796,handler,onPress,Hermes F#24796,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-24797,handler,onPress,Hermes F#24797,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-24805,handler,onPress,Hermes F#24805,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-24809,handler,createStyles,Hermes F#24809,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-24814,handler,onPress,Hermes F#24814,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-24819,handler,createStyles,Hermes F#24819,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-24850,handler,onPress,Hermes F#24850,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-24877,handler,createStyles,Hermes F#24877,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-25000,handler,createDateTimeSetEvtParams,Hermes F#25000,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-25001,handler,createDismissEvtParams,Hermes F#25001,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-25002,handler,createNeutralEvtParams,Hermes F#25002,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-25008,handler,onChange,Hermes F#25008,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-25009,handler,onChange,Hermes F#25009,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-25018,handler,handleChooseService,Hermes F#25018,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25019,handler,handleRepeatPress,Hermes F#25019,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25020,handler,handleToggleWeeklyRepeat,Hermes F#25020,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25024,handler,handleNext,Hermes F#25024,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25025,handler,handleBack,Hermes F#25025,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25029,handler,handleStepPress,Hermes F#25029,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25035,handler,createStyles,Hermes F#25035,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25050,handler,applyScheduleTemplate,Hermes F#25050,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25053,handler,handleSelectSuggestion,Hermes F#25053,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25054,handler,onChangeDate,Hermes F#25054,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25056,handler,handleIncrement,Hermes F#25056,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25058,handler,handleDecrement,Hermes F#25058,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25078,handler,handleNotification,Hermes F#25078,app-owned/business,src/integrations/native.ts,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25095,handler,scheduleAppointmentNotification,Hermes F#25095,app-owned/business,src/integrations/native.ts,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25117,handler,scheduleBackupReminder,Hermes F#25117,app-owned/business,src/integrations/native.ts,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25126,handler,scheduleTestNotification,Hermes F#25126,app-owned/business,src/integrations/native.ts,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25283,handler,updatePushTokenAsync,Hermes F#25283,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25287,handler,setAutoServerRegistrationEnabledAsync,Hermes F#25287,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25318,handler,setLastRegisteredTokenDataAsync,Hermes F#25318,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25326,handler,updateDevicePushTokenAsync,Hermes F#25326,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25406,handler,setNotificationChannelAsync,Hermes F#25406,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25417,handler,deleteNotificationChannelAsync,Hermes F#25417,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25437,handler,setNotificationChannelGroupAsync,Hermes F#25437,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25443,handler,deleteNotificationChannelGroupAsync,Hermes F#25443,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25458,handler,setBadgeCountAsync,Hermes F#25458,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25461,handler,setBadgeCountAsync,Hermes F#25461,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25476,handler,scheduleNotificationAsync,Hermes F#25476,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25520,handler,setNotificationCategoryAsync,Hermes F#25520,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25526,handler,deleteNotificationCategoryAsync,Hermes F#25526,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25584,handler,setNotificationHandler,Hermes F#25584,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-25680,handler,onPress,Hermes F#25680,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25687,handler,onPress,Hermes F#25687,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25688,handler,onPress,Hermes F#25688,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25689,handler,onPress,Hermes F#25689,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25696,handler,onPress,Hermes F#25696,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25702,handler,onPress,Hermes F#25702,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25703,handler,onPress,Hermes F#25703,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25704,handler,onChangeText,Hermes F#25704,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25706,handler,onPress,Hermes F#25706,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25717,handler,onPress,Hermes F#25717,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25735,handler,deleteScheduleHandler,Hermes F#25735,app-owned/business,src/features/agenda/Details.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25736,handler,handleDeletePress,Hermes F#25736,app-owned/business,src/features/agenda/Details.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25741,handler,handleEdit,Hermes F#25741,app-owned/business,src/features/agenda/Details.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25742,handler,handleWhatsApp,Hermes F#25742,app-owned/business,src/features/agenda/Details.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25747,handler,onPress,Hermes F#25747,app-owned/business,src/features/agenda/Details.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25754,handler,createStyles,Hermes F#25754,app-owned/business,src/features/agenda/Details.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25759,handler,handleAddService,Hermes F#25759,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25760,handler,toggleService,Hermes F#25760,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25763,handler,handleConfirm,Hermes F#25763,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25773,handler,onPress,Hermes F#25773,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25781,handler,handleAddClient,Hermes F#25781,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25782,handler,handleSelectClient,Hermes F#25782,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25786,handler,onPress,Hermes F#25786,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25787,handler,onPress,Hermes F#25787,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25808,handler,handleConfirm,Hermes F#25808,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25809,handler,handleLoadMore,Hermes F#25809,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25813,handler,onPress,Hermes F#25813,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25814,handler,onPress,Hermes F#25814,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25816,handler,onClose,Hermes F#25816,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25829,handler,createStyles,Hermes F#25829,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25832,handler,createStyles,Hermes F#25832,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25848,handler,handleSelectTheme,Hermes F#25848,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25849,handler,openPremiumCta,Hermes F#25849,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25858,handler,openSystemSettings,Hermes F#25858,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25862,handler,onPress,Hermes F#25862,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25863,handler,toggleNotifications,Hermes F#25863,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25864,handler,onPress,Hermes F#25864,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25866,handler,onPress,Hermes F#25866,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25867,handler,onPress,Hermes F#25867,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25869,handler,onPress,Hermes F#25869,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25870,handler,onClose,Hermes F#25870,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25871,handler,onPress,Hermes F#25871,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25872,handler,onPress,Hermes F#25872,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25873,handler,onPress,Hermes F#25873,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25889,handler,onPress,Hermes F#25889,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25895,handler,onBackdropPress,Hermes F#25895,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25896,handler,onPress,Hermes F#25896,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25900,handler,createStyles,Hermes F#25900,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25909,handler,createStyles,Hermes F#25909,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25920,handler,handleSelect,Hermes F#25920,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25921,handler,onPress,Hermes F#25921,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25924,handler,onPress,Hermes F#25924,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25948,handler,handleSelect,Hermes F#25948,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25949,handler,onPress,Hermes F#25949,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25952,handler,onPress,Hermes F#25952,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25960,handler,handleSelect,Hermes F#25960,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25963,handler,onPress,Hermes F#25963,app-owned/business,src/features/settings/Settings.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25997,handler,openMonth,Hermes F#25997,app-owned/business,src/features/statistics/Statistics.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25998,handler,onPress,Hermes F#25998,app-owned/business,src/features/statistics/Statistics.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-25999,handler,onPress,Hermes F#25999,app-owned/business,src/features/statistics/Statistics.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26001,handler,onPress,Hermes F#26001,app-owned/business,src/features/statistics/Statistics.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26009,handler,createStyles,Hermes F#26009,app-owned/business,src/features/statistics/Statistics.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26043,handler,createStyles,Hermes F#26043,app-owned/business,src/features/statistics/Statistics.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26053,handler,openScheduleDetails,Hermes F#26053,app-owned/business,src/features/statistics/Statistics.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26057,handler,onPress,Hermes F#26057,app-owned/business,src/features/statistics/Statistics.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26061,handler,createStyles,Hermes F#26061,app-owned/business,src/features/statistics/Statistics.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26077,handler,handleIntervalChange,Hermes F#26077,app-owned/business,src/features/backup/Backup.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26082,handler,handleExport,Hermes F#26082,app-owned/business,src/features/backup/Backup.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26086,handler,onPress,Hermes F#26086,app-owned/business,src/features/backup/Backup.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26092,handler,onPress,Hermes F#26092,app-owned/business,src/features/backup/Backup.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26093,handler,handleImport,Hermes F#26093,app-owned/business,src/features/backup/Backup.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26095,handler,onPress,Hermes F#26095,app-owned/business,src/features/backup/Backup.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26100,handler,createStyles,Hermes F#26100,app-owned/business,src/features/backup/Backup.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26106,handler,exportBackup,Hermes F#26106,app-owned/business,src/features/backup/Backup.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26110,handler,importBackup,Hermes F#26110,app-owned/business,src/features/backup/Backup.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26114,handler,applyImportedData,Hermes F#26114,app-owned/business,src/features/backup/Backup.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26142,handler,deleteAsync,Hermes F#26142,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-26146,handler,deleteLegacyDocumentDirectoryAndroid,Hermes F#26146,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-26182,handler,createDownloadResumable,Hermes F#26182,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-26183,handler,createUploadTask,Hermes F#26183,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-26242,handler,createFileAsync,Hermes F#26242,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-26543,handler,setCustomUserId,Hermes F#26543,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-26544,handler,setCustomSessionId,Hermes F#26544,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-26545,handler,setCustomTag,Hermes F#26545,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-26546,handler,setCustomTags,Hermes F#26546,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-26548,handler,setOnSessionStartedCallback,Hermes F#26548,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-26550,handler,setCurrentScreenName,Hermes F#26550,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
+H-26580,handler,onSelect,Hermes F#26580,app-owned/business,src/features/onboarding/Onboarding.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26586,handler,createStyles,Hermes F#26586,app-owned/business,src/features/onboarding/Onboarding.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
+H-26600,handler,onPress,Hermes F#26600,app-owned/business,src/features/onboarding/Onboarding.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
