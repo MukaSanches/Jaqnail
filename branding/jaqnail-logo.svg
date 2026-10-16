@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1176" height="290" viewBox="0 0 1176 290" role="img" aria-label="Jaqnail, agenda e gestão para manicures. Desenvolvido por Samuel Sanches">
+ <defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#53324C"/><stop offset="1" stop-color="#251724"/></linearGradient><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF5ED"/><stop offset=".7" stop-color="#EFC7C5"/><stop offset="1" stop-color="#CFAE84"/></linearGradient></defs>
+ <rect width="212" height="212" x="30" y="39" rx="52" fill="url(#a)"/>
+ <path d="M136 83c-32 0-54 27-54 70v30c0 38 22 63 54 63s54-25 54-63v-30c0-43-22-70-54-70Z" fill="none" stroke="#CFAE84" stroke-width="4"/>
+ <path d="M136 104c-21 0-36 22-36 49v28c0 28 14 43 36 43s36-15 36-43v-28c0-27-15-49-36-49Z" fill="url(#b)"/>
+ <path d="M149 129v53c0 19-10 27-26 27-8 0-16-5-20-11" fill="none" stroke="#3E263A" stroke-width="12" stroke-linecap="round"/>
+ <path d="M197 75l5 16 16 5-16 5-5 16-5-16-16-5 16-5Z" fill="#CFAE84"/>
+ <text x="287" y="163" font-family="Georgia,DejaVu Serif,serif" font-size="132" letter-spacing="-7" fill="#321D30">jaqnail</text>
+ <text x="295" y="202" font-family="Arial,DejaVu Sans,sans-serif" font-size="20" font-weight="bold" letter-spacing="5" fill="#A66C86">BELEZA, AGENDA E GESTÃO</text>
+ <text x="295" y="235" font-family="Arial,DejaVu Sans,sans-serif" font-size="17" letter-spacing="1" fill="#5F4B59">DESENVOLVIDO POR SAMUEL SANCHES</text>
+</svg>
