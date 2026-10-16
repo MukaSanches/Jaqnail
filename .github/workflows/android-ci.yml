@@ -1,0 +1,56 @@
+name: Android CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    name: Typecheck, tests and debug APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check whether Android project exists
+        id: project
+        shell: bash
+        run: |
+          if test -f package.json && test -f package-lock.json; then echo "exists=true" >> "$GITHUB_OUTPUT"; else echo "exists=false" >> "$GITHUB_OUTPUT"; echo "No Expo code yet; Android checks begin after Codex generates the app."; fi
+      - if: steps.project.outputs.exists == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - if: steps.project.outputs.exists == 'true'
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - if: steps.project.outputs.exists == 'true'
+        uses: android-actions/setup-android@v3
+      - if: steps.project.outputs.exists == 'true'
+        run: npm ci
+      - if: steps.project.outputs.exists == 'true'
+        name: Typecheck
+        run: npm run typecheck --if-present
+      - if: steps.project.outputs.exists == 'true'
+        name: Lint
+        run: npm run lint --if-present
+      - if: steps.project.outputs.exists == 'true'
+        name: Tests
+        run: npm run test:ci --if-present
+      - if: steps.project.outputs.exists == 'true'
+        name: Generate native Android project
+        run: npx expo prebuild --platform android --non-interactive
+      - if: steps.project.outputs.exists == 'true'
+        name: Compile debug APK (testing only)
+        working-directory: android
+        run: chmod +x gradlew && ./gradlew :app:assembleDebug --no-daemon
+      - if: steps.project.outputs.exists == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Jaqnail-debug-APK-NOT-FOR-RELEASE
+          path: android/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
