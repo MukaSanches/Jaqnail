@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="620" viewBox="0 0 1600 620" role="img" aria-label="Jaqnail, uma agenda à altura do seu talento">
+ <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2B1929"/><stop offset=".65" stop-color="#4F3047"/><stop offset="1" stop-color="#74506C"/></linearGradient><linearGradient id="rose" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFEEE5"/><stop offset=".5" stop-color="#EFC7C5"/><stop offset="1" stop-color="#CFAE84"/></linearGradient><filter id="shadow"><feDropShadow dx="0" dy="26" stdDeviation="35" flood-opacity=".23"/></filter></defs>
+ <rect width="1600" height="620" rx="40" fill="url(#bg)"/>
+ <circle cx="1390" cy="75" r="330" fill="#F3B9B4" opacity=".07"/>
+ <circle cx="1010" cy="580" r="270" fill="#E3B08A" opacity=".09"/>
+ <path d="M1050 0C910 180 1225 395 1035 620M1195 0C1040 175 1360 400 1185 620M1340 0C1185 185 1505 395 1335 620" fill="none" stroke="#E9C8BC" stroke-width="2" opacity=".17"/>
+ <text x="105" y="110" font-family="Arial,DejaVu Sans,sans-serif" font-size="20" font-weight="bold" letter-spacing="7" fill="#E5BDBB">JAQNAIL · BEAUTY BUSINESS</text>
+ <text x="102" y="270" font-family="Georgia,DejaVu Serif,serif" font-size="102" letter-spacing="-5" fill="#FFF8F3">Sua agenda.</text>
+ <text x="102" y="375" font-family="Georgia,DejaVu Serif,serif" font-size="102" letter-spacing="-5" fill="#F4C6C5">Seu talento.</text>
+ <text x="108" y="452" font-family="Arial,DejaVu Sans,sans-serif" font-size="29" fill="#F5E6E9">Mais organização. Mais clientes. Mais liberdade.</text>
+ <rect x="105" y="494" width="475" height="59" rx="29" fill="#F3E4E0"/>
+ <text x="143" y="533" font-family="Arial,DejaVu Sans,sans-serif" font-size="22" font-weight="bold" letter-spacing="2" fill="#321D30">FEITO POR SAMUEL SANCHES</text>
+ <g filter="url(#shadow)" transform="translate(1160 102)">
+  <rect x="0" y="0" width="330" height="445" rx="64" fill="#271825" stroke="#BD9DAE" stroke-width="7"/>
+  <rect x="15" y="16" width="300" height="414" rx="51" fill="#FCF7F3"/>
+  <rect x="120" y="27" width="90" height="16" rx="8" fill="#271825"/>
+  <text x="43" y="93" font-family="Georgia,DejaVu Serif,serif" font-size="40" fill="#321D30">jaqnail</text>
+  <text x="43" y="127" font-family="Arial,DejaVu Sans,sans-serif" font-size="16" fill="#A66C86">Minha agenda</text>
+  <rect x="43" y="148" width="245" height="66" rx="17" fill="#F6E5E5"/>
+  <text x="63" y="174" font-family="Arial,DejaVu Sans,sans-serif" font-size="13" fill="#6B5664">HOJE</text>
+  <text x="63" y="198" font-family="Arial,DejaVu Sans,sans-serif" font-size="20" font-weight="bold" fill="#321D30">Sua rotina, no controle</text>
+  <rect x="43" y="238" width="245" height="67" rx="16" fill="#FFF"/>
+  <rect x="43" y="238" width="6" height="67" rx="3" fill="#A66C86"/>
+  <text x="65" y="266" font-family="Arial,DejaVu Sans,sans-serif" font-size="17" font-weight="bold" fill="#321D30">Agenda inteligente</text>
+  <text x="65" y="289" font-family="Arial,DejaVu Sans,sans-serif" font-size="13" fill="#786674">Horários organizados</text>
+  <rect x="43" y="321" width="245" height="67" rx="16" fill="#FFF"/>
+  <rect x="43" y="321" width="6" height="67" rx="3" fill="#CFAE84"/>
+  <text x="65" y="349" font-family="Arial,DejaVu Sans,sans-serif" font-size="17" font-weight="bold" fill="#321D30">Seu negócio cresce</text>
+  <text x="65" y="372" font-family="Arial,DejaVu Sans,sans-serif" font-size="13" fill="#786674">Controle em um só lugar</text>
+ </g>
+</svg>
