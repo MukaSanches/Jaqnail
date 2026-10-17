@@ -6,7 +6,7 @@ Jaqnail é um aplicativo Android independente, desenvolvido por Samuel Sanches. 
 - `src/data/repository.ts`: SQLite com WAL, chaves estrangeiras, migração v1, transações para agendamentos e restauração. O mesmo repositório roda nos testes sobre SQLite real (`node:sqlite`).
 - `src/features`: formulários, agenda, catálogos, estatísticas, preferências, backup e onboarding.
 - `src/app`: contexto e pilha tipada. Rotas anteriores continuam montadas para preservar formulários durante seleção/cadastro. Android Back confirma descarte.
-- `src/integrations/native.ts`: arquivos temporários apagados após compartilhar, DocumentPicker, alertas locais e reconciliação idempotente.
+- `src/integrations/native.ts`: arquivos temporários de exportação mantidos por 24 horas e limpos no próximo compartilhamento, DocumentPicker, alertas locais e reconciliação idempotente.
 
 Navegação local foi escolhida em vez de Expo Router para reduzir dependências e manter o estado do assistente explicitamente. IDs gerados por `expo-crypto.randomUUID`; nenhum dado demonstrativo em produção. Listas usam FlatList; ainda é necessário medir desempenho com grandes bases em aparelho de baixo custo.
 

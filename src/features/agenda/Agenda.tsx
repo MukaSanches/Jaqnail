@@ -18,9 +18,11 @@ import type { Appointment } from "../../domain/models";
 export function AppointmentCard({
   a,
   copy = false,
+  onCopy,
 }: {
   a: Appointment;
   copy?: boolean;
+  onCopy?: (a: Appointment) => void;
 }) {
   const { push, p } = useApp();
   return (
@@ -44,22 +46,30 @@ export function AppointmentCard({
         <Button
           title="Duplicar"
           onPress={() =>
-            push({
-              screen: "wizard",
-              draft: {
-                ...a,
-                id: undefined,
-                startsAt: new Date().toISOString(),
-              },
-            })
+            onCopy
+              ? onCopy(a)
+              : push({
+                  screen: "wizard",
+                  draft: {
+                    ...a,
+                    id: undefined,
+                    startsAt: new Date().toISOString(),
+                  },
+                })
           }
         />
       )}
     </Card>
   );
 }
-export function Agenda({ history = false }: { history?: boolean }) {
-  const { repo, p, run, push } = useApp();
+export function Agenda({
+  history = false,
+  selectTemplate,
+}: {
+  history?: boolean;
+  selectTemplate?: (a: Appointment) => void;
+}) {
+  const { repo, p, run, push, pop } = useApp();
   const [date, setDate] = useState(dayKey(new Date())),
     [query, setQuery] = useState(""),
     [status, setStatus] = useState("all"),
@@ -217,7 +227,20 @@ export function Agenda({ history = false }: { history?: boolean }) {
         keyExtractor={(a) => a.id}
         ListHeaderComponent={header}
         ListEmptyComponent={<Empty text="Nenhum atendimento neste período" />}
-        renderItem={({ item }) => <AppointmentCard a={item} copy={history} />}
+        renderItem={({ item }) => (
+          <AppointmentCard
+            a={item}
+            copy={history}
+            onCopy={
+              selectTemplate
+                ? (a) => {
+                    selectTemplate(a);
+                    pop();
+                  }
+                : undefined
+            }
+          />
+        )}
         ListFooterComponent={
           !history && !query ? (
             <View>

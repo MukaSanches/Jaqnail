@@ -2,8 +2,19 @@ import { validateSnapshot } from "../data/repository";
 import { preferencesSchema, type Snapshot } from "./models";
 import { money, cost } from "./rules";
 export const MAX_BACKUP_BYTES = 10 * 1024 * 1024;
+function assertBackupSize(text: string) {
+  let bytes = 0;
+  for (const char of text) {
+    const code = char.codePointAt(0)!;
+    bytes += code <= 0x7f ? 1 : code <= 0x7ff ? 2 : code <= 0xffff ? 3 : 4;
+    if (bytes > MAX_BACKUP_BYTES)
+      throw new Error(
+        "Backup excede 10 MiB. Operação cancelada; seus dados continuam intactos.",
+      );
+  }
+}
 export function serializeBackup(data: Snapshot) {
-  return JSON.stringify(
+  const text = JSON.stringify(
     {
       format: "jaqnail",
       version: 1,
@@ -13,9 +24,11 @@ export function serializeBackup(data: Snapshot) {
     null,
     2,
   );
+  assertBackupSize(text);
+  return text;
 }
 export function parseBackup(text: string): Snapshot {
-  if (text.length > MAX_BACKUP_BYTES) throw new Error("Backup excede 10 MiB.");
+  assertBackupSize(text);
   let raw: unknown;
   try {
     raw = JSON.parse(text);

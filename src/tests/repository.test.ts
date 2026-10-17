@@ -242,3 +242,17 @@ test("backup refuses active overlaps instead of importing an invalid agenda", ()
   assert.throws(() => repo.importSnapshot(data), /conflit/i);
   assert.equal(repo.list("appointments").length, 1);
 });
+test("export never creates a backup larger than the import limit", () => {
+  const { repo, c } = setup();
+  const data = repo.snapshot();
+  data.clients = Array.from({ length: 5000 }, (_, i) => ({
+    ...c,
+    id: "large-" + i,
+    notes: "x".repeat(2000),
+  }));
+  assert.throws(() => serializeBackup(data), /10 MiB/);
+});
+test("backup size limit counts UTF-8 bytes rather than UTF-16 characters", () => {
+  const text = '"' + "é".repeat(6 * 1024 * 1024) + '"';
+  assert.throws(() => parseBackup(text), /10 MiB/);
+});

@@ -48,12 +48,12 @@ export function Wizard({ route }: { route: Route }) {
         setLines(
           services.map(
             (s) =>
-              lines.find((l) => l.serviceId === s.id) ?? {
+              (old ? lines.find((l) => l.serviceId === s.id) : undefined) ?? {
                 serviceId: s.id,
                 name: s.name,
                 priceCents: s.priceCents,
                 duration: s.duration,
-                amount: 1,
+                amount: lines.find((l) => l.serviceId === s.id)?.amount ?? 1,
               },
           ),
         ),
@@ -118,7 +118,18 @@ export function Wizard({ route }: { route: Route }) {
           <Button
             title="Copiar do histórico"
             secondary
-            onPress={() => push({ screen: "history" })}
+            onPress={() =>
+              push({
+                screen: "history",
+                selectTemplate: (a) => {
+                  setClientId(a.clientId);
+                  setLines(a.services);
+                  setDiscount((a.discountCents / 100).toFixed(2));
+                  setPayment(a.payment);
+                  setNotes(a.notes);
+                },
+              })
+            }
           />
         </>
       )}

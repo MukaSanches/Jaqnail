@@ -1,4 +1,7 @@
 import React from "react";
+import { Alert } from "react-native";
+import { pickBackup } from "../integrations/native";
+import { serializeBackup } from "../domain/backup";
 import {
   render,
   fireEvent,
@@ -127,4 +130,175 @@ test("theme changes persist and about contains author and free access", () => {
   expect(r.preferences().theme).toBe("dark");
   fireEvent.press(screen.getByText("Tudo gratuito"));
   expect(screen.getByText("Desenvolvido por Samuel Sanches")).toBeTruthy();
+});
+test("new appointment uses freshly edited service values while preserving quantity", () => {
+  const r = repo();
+  r.setPreferences({ onboarded: true });
+  r.saveCatalog("clients", {
+    name: "Ana Cliente",
+    phone: "",
+    notes: "",
+    consent: false,
+  });
+  r.saveCatalog("services", {
+    name: "Manicure",
+    priceCents: 5000,
+    duration: 30,
+    notes: "",
+  });
+  render(<AppRoot repository={r} />);
+  fireEvent.press(screen.getByText("Novo agendamento"));
+  fireEvent.press(screen.getByText("Selecionar cliente"));
+  fireEvent.press(screen.getByText("Ana Cliente"));
+  fireEvent.press(screen.getByText("Próximo"));
+  fireEvent.press(screen.getByText("Escolher serviços"));
+  fireEvent.press(screen.getByText("Manicure"));
+  fireEvent.press(screen.getByText("Confirmar seleção"));
+  fireEvent.press(screen.getByText("+ Manicure"));
+  fireEvent.press(screen.getByText("Escolher serviços"));
+  fireEvent.press(screen.getByText("Editar"));
+  fireEvent.changeText(screen.getByLabelText("Preço"), "80");
+  fireEvent.changeText(screen.getByLabelText("Duração em minutos"), "60");
+  fireEvent.press(screen.getByText("Salvar"));
+  fireEvent.press(screen.getByText("Confirmar seleção"));
+  fireEvent.press(screen.getByText("Próximo"));
+  fireEvent.press(screen.getByText("Salvar agendamento"));
+  expect(r.list("appointments")[0]?.totalCents).toBe(16000);
+  expect(r.list("appointments")[0]?.duration).toBe(120);
+});
+test("copying history returns to the existing wizard and saves back to agenda", () => {
+  const r = repo();
+  r.setPreferences({ onboarded: true });
+  const c = r.saveCatalog("clients", {
+    name: "Cliente Histórico",
+    phone: "",
+    notes: "",
+    consent: false,
+  });
+  const s = r.saveCatalog("services", {
+    name: "Serviço Histórico",
+    priceCents: 2500,
+    duration: 30,
+    notes: "",
+  });
+  r.saveAppointment({
+    clientId: c.id,
+    services: [
+      {
+        serviceId: s.id,
+        name: s.name,
+        priceCents: s.priceCents,
+        duration: 30,
+        amount: 1,
+      },
+    ],
+    startsAt: "2020-01-01T10:00:00Z",
+    timezone: "UTC",
+    discountCents: 0,
+    payment: "pix",
+    notes: "Copiada",
+  });
+  render(<AppRoot repository={r} />);
+  fireEvent.press(screen.getByText("Novo agendamento"));
+  fireEvent.press(screen.getByText("Copiar do histórico"));
+  fireEvent.press(screen.getByText("Duplicar"));
+  fireEvent.press(screen.getByText("Próximo"));
+  fireEvent.press(screen.getByText("Próximo"));
+  fireEvent.press(screen.getByText("Salvar agendamento"));
+  expect(r.list("appointments")).toHaveLength(2);
+  expect(screen.getByText("Novo agendamento")).toBeTruthy();
+  expect(screen.queryByText("Próximo")).toBeNull();
+  expect(screen.queryByText("Histórico e cópias")).toBeNull();
+});
+
+function confirmAlert(label: string) {
+  const call = jest.mocked(Alert.alert).mock.calls.at(-1);
+  const button = call?.[2]?.find((b) => b.text === label);
+  expect(button?.onPress).toBeDefined();
+  act(() => button?.onPress?.());
+}
+test("backup preview leaves data intact until confirmation, and recovery restores it", async () => {
+  const r = repo(),
+    incoming = repo();
+  r.setPreferences({ onboarded: true });
+  incoming.setPreferences({ onboarded: true });
+  r.saveCatalog("clients", {
+    name: "Cliente Original",
+    phone: "",
+    notes: "",
+    consent: false,
+  });
+  incoming.saveCatalog("clients", {
+    name: "Cliente Importada",
+    phone: "",
+    notes: "",
+    consent: false,
+  });
+  jest
+    .mocked(pickBackup)
+    .mockResolvedValueOnce(serializeBackup(incoming.snapshot()));
+  const alert = jest.spyOn(Alert, "alert").mockImplementation(() => {});
+  render(<AppRoot repository={r} />);
+  fireEvent.press(screen.getByText("Ajustes"));
+  fireEvent.press(screen.getByText("Backup e restauração"));
+  await act(async () => {
+    fireEvent.press(screen.getByText("Importar backup"));
+  });
+  expect(screen.getByText("Prévia da restauração")).toBeTruthy();
+  expect(r.list("clients")[0]?.name).toBe("Cliente Original");
+  fireEvent.press(screen.getByText("Restaurar"));
+  confirmAlert("Restaurar");
+  expect(r.list("clients")[0]?.name).toBe("Cliente Importada");
+  fireEvent.press(screen.getByText("Recuperar estado anterior à importação"));
+  confirmAlert("Recuperar");
+  expect(r.list("clients")[0]?.name).toBe("Cliente Original");
+  alert.mockRestore();
+});
+test("details cancellation, reactivation, deletion and undo change persisted appointments", () => {
+  const r = repo();
+  r.setPreferences({ onboarded: true });
+  const c = r.saveCatalog("clients", {
+    name: "Cliente Detalhes",
+    phone: "",
+    notes: "",
+    consent: false,
+  });
+  const s = r.saveCatalog("services", {
+    name: "Manicure",
+    priceCents: 5000,
+    duration: 30,
+    notes: "",
+  });
+  const a = r.saveAppointment({
+    clientId: c.id,
+    services: [
+      {
+        serviceId: s.id,
+        name: s.name,
+        priceCents: s.priceCents,
+        duration: 30,
+        amount: 1,
+      },
+    ],
+    startsAt: new Date().toISOString(),
+    timezone: "UTC",
+    discountCents: 0,
+    payment: "cash",
+    notes: "",
+  })[0]!;
+  const alert = jest.spyOn(Alert, "alert").mockImplementation(() => {});
+  render(<AppRoot repository={r} />);
+  fireEvent.press(screen.getByText("Cliente Detalhes"));
+  fireEvent.press(screen.getByText("Cancelar agendamento"));
+  confirmAlert("Confirmar");
+  expect(r.get("appointments", a.id)?.status).toBe("cancelled");
+  fireEvent.press(screen.getByText("Reativar"));
+  confirmAlert("Confirmar");
+  expect(r.get("appointments", a.id)?.status).toBe("active");
+  fireEvent.press(screen.getByText("Excluir"));
+  confirmAlert("Excluir");
+  expect(r.list("appointments")).toHaveLength(0);
+  fireEvent.press(screen.getByText("Desfazer"));
+  expect(r.list("appointments")).toHaveLength(1);
+  alert.mockRestore();
 });

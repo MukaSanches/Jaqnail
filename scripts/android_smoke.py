@@ -12,6 +12,13 @@ def dump():
     text=run('shell','cat','/sdcard/jaqnail-window.xml').decode()
     (out/'window.xml').write_text(text)
     return ET.fromstring(text)
+def wait_control(text):
+    for _ in range(30):
+        for node in dump().iter('node'):
+            if node.get('text')==text or node.get('content-desc')==text:
+                return node
+        time.sleep(1)
+    raise AssertionError('Control absent: '+text)
 def tap(text):
     for _ in range(20):
         tree=dump()
@@ -32,11 +39,21 @@ for _ in range(20):
     time.sleep(1)
 else:raise AssertionError('Agenda did not open')
 (out/'agenda.png').write_bytes(run('exec-out','screencap','-p'))
+tap('Clientes');tap('Adicionar cliente')
+name = next(n for n in dump().iter('node') if n.get('class') == 'android.widget.EditText' and n.get('content-desc') == 'Nome')
+x1,y1,x2,y2=map(int,re.findall(r'\d+',name.get('bounds','')))
+run('shell','input','tap',str((x1+x2)//2),str((y1+y2)//2))
+run('shell','input','text','Cliente%sSmoke')
+run('shell','input','keyevent','4')
+tap('Salvar')
+wait_control('Cliente Smoke')
+(out/'cliente.png').write_bytes(run('exec-out','screencap','-p'))
 run('shell','am','force-stop',package)
 run('shell','monkey','-p',package,'-c','android.intent.category.LAUNCHER','1')
-time.sleep(3)
-assert not any(n.get('text')=='Continuar' for n in dump().iter('node')), 'Onboarding state lost'
+wait_control('Novo agendamento')
+tap('Clientes')
+wait_control('Cliente Smoke')
 logs=run('logcat','-d','-s','AndroidRuntime:E','ReactNativeJS:E').decode(errors='replace');(out/'errors.log').write_text(logs)
 assert 'FATAL EXCEPTION' not in logs and 'TypeError:' not in logs
-(out/'result.txt').write_text('PASS: installation, launch, three-step onboarding, agenda, persistent onboarding after process restart.\n')
+(out/'result.txt').write_text('PASS: installation, launch, three-step onboarding, agenda, persistent onboarding AND client SQLite record after process restart.\n')
 print((out/'result.txt').read_text())

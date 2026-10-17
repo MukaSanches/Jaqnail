@@ -5,7 +5,16 @@ import * as DocumentPicker from "expo-document-picker";
 import { Platform } from "react-native";
 import type { Repository } from "../data/repository";
 import { serializeBackup, MAX_BACKUP_BYTES } from "../domain/backup";
+import { reminderPlan } from "../domain/reminders";
 import { csvCell } from "../domain/rules";
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowBanner: true,
+    shouldShowList: true,
+    shouldPlaySound: false,
+    shouldSetBadge: false,
+  }),
+});
 export async function requestNotifications() {
   if (Platform.OS === "android")
     await Notifications.setNotificationChannelAsync("appointments", {
@@ -20,33 +29,11 @@ export async function syncReminders(repo: Repository) {
   const scheduled = await Notifications.getAllScheduledNotificationsAsync();
   const ours = scheduled.filter((n) => n.identifier.startsWith("jaqnail-"));
   const granted = (await Notifications.getPermissionsAsync()).granted;
-  const wanted = new Map<
-    string,
-    { at: Date; title: string; body: string; fingerprint: string }
-  >();
-  if (p.notifications && granted) {
-    for (const a of repo.list("appointments")) {
-      const at = new Date(Date.parse(a.startsAt) - p.reminderMinutes * 60000);
-      if (a.status === "active" && at.getTime() > Date.now())
-        wanted.set("jaqnail-" + a.id, {
-          at,
-          title: "Seu próximo atendimento",
-          body: "Abra o Jaqnail para conferir os detalhes.",
-          fingerprint: a.updatedAt + ":" + p.reminderMinutes,
-        });
-    }
-    const at = new Date(
-      Date.parse(p.lastBackup ?? new Date().toISOString()) +
-        p.backupDays * 86400000,
-    );
-    if (at.getTime() > Date.now())
-      wanted.set("jaqnail-backup", {
-        at,
-        title: "Proteja sua agenda",
-        body: "É hora de exportar um backup do Jaqnail.",
-        fingerprint: at.toISOString(),
-      });
-  }
+  const createdAt = repo.db.getAllSync<{ applied_at: string }>(
+    "SELECT applied_at FROM schema_migrations ORDER BY version LIMIT 1",
+  )[0]?.applied_at;
+  if (!createdAt) throw new Error("Data de criação do banco indisponível.");
+  const wanted = reminderPlan(repo.list("appointments"), p, granted, createdAt);
   const jobs = new Map(
     repo.db
       .getAllSync<{
@@ -84,20 +71,31 @@ export async function syncReminders(repo: Repository) {
 async function shareFile(name: string, text: string, mimeType: string) {
   if (!FileSystem.cacheDirectory)
     throw new Error("Armazenamento temporário indisponível.");
+  // Android resolves shareAsync when the chooser closes, before the receiver
+  // necessarily reads the URI. Keep new files; only expire our old exports.
+  const existing = await FileSystem.readDirectoryAsync(
+    FileSystem.cacheDirectory,
+  );
+  for (const file of existing) {
+    const match =
+      /^Jaqnail-(?:backup|clientes|agendamentos|estatisticas)-(\d+)\.(?:json|csv)$/.exec(
+        file,
+      );
+    if (match && Number(match[1]) < Date.now() - 86_400_000)
+      await FileSystem.deleteAsync(FileSystem.cacheDirectory + file, {
+        idempotent: true,
+      });
+  }
   const uri = FileSystem.cacheDirectory + name;
   await FileSystem.writeAsStringAsync(uri, text, {
     encoding: FileSystem.EncodingType.UTF8,
   });
-  try {
-    if (!(await Sharing.isAvailableAsync()))
-      throw new Error("Compartilhamento indisponível neste aparelho.");
-    await Sharing.shareAsync(uri, {
-      mimeType,
-      dialogTitle: "Salvar uma cópia segura",
-    });
-  } finally {
-    await FileSystem.deleteAsync(uri, { idempotent: true });
-  }
+  if (!(await Sharing.isAvailableAsync()))
+    throw new Error("Compartilhamento indisponível neste aparelho.");
+  await Sharing.shareAsync(uri, {
+    mimeType,
+    dialogTitle: "Salvar uma cópia segura",
+  });
 }
 export async function shareBackup(repo: Repository) {
   await shareFile(

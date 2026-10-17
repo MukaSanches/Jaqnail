@@ -9,3 +9,6 @@ coverage/
 .env*
 !.env.example
 *.log
+*.p12
+__pycache__/
+*.pyc

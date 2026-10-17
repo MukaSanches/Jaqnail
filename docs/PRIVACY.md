@@ -4,7 +4,7 @@ Desenvolvido por Samuel Sanches. O app opera offline e guarda seus cadastros no 
 
 Nome, telefone, observações e agenda podem conter dados pessoais. Obtenha consentimento para contato e registre apenas o necessário. WhatsApp abre uma prévia e um link público depois de sua ação; o envio depende de confirmação no aplicativo externo. O consentimento pode ser retirado no cadastro.
 
-O banco utiliza a proteção do armazenamento privado do Android; não há criptografia adicional do banco. Use bloqueio de tela. O backup automático do Android está desativado para o app. Exportações JSON/CSV são legíveis; proteja o local em que as guarda. O cache temporário de compartilhamento é removido ao terminar a interação.
+O banco utiliza a proteção do armazenamento privado do Android; não há criptografia adicional do banco. Use bloqueio de tela. O backup automático do Android está desativado para o app. Exportações JSON/CSV são legíveis; proteja o local em que as guarda. Arquivos de compartilhamento ficam no cache privado por pelo menos 24 horas para que o aplicativo destinatário consiga lê-los. Exportações antigas são removidas no próximo compartilhamento; o Android também pode limpar o cache.
 
 Notificações são opcionais, locais e sem nome/telefone do cliente no texto. O sistema operacional controla permissões e entrega; economia de bateria pode atrasar lembretes. Nenhuma permissão para anúncios, cobrança ou microfone é necessária.
 

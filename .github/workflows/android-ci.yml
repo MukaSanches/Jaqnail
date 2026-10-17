@@ -4,8 +4,13 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+    inputs:
+      validation_draft:
+        description: 'Attach test APK and smoke evidence to an unpublished validation draft'
+        type: boolean
+        default: false
 permissions:
-  contents: read
+  contents: write
 concurrency:
   group: android-ci-${{ github.ref }}
   cancel-in-progress: true
@@ -62,3 +67,14 @@ jobs:
           name: Android-smoke-evidence
           path: dist/smoke/
           if-no-files-found: warn
+      - name: Prepare unpublished validation draft
+        if: success() && github.event_name == 'workflow_dispatch' && inputs.validation_draft
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="validation-${GITHUB_SHA:0:12}"
+          cp android/app/build/outputs/apk/release/app-release.apk dist/Jaqnail-TEST-NOT-FOR-DISTRIBUTION.apk
+          (cd dist && sha256sum Jaqnail-TEST-NOT-FOR-DISTRIBUTION.apk > SHA256SUMS.txt)
+          tar -czf dist/android-smoke-evidence.tar.gz -C dist smoke
+          printf '%s\n' 'Artefato interno de validação. Assinatura de teste; não distribuir. Este rascunho não é a versão v1.0.0.' > dist/validation-notes.md
+          gh release create "$tag" --draft --prerelease --target "$GITHUB_SHA" --title "Validação Android ${GITHUB_SHA:0:12}" --notes-file dist/validation-notes.md dist/Jaqnail-TEST-NOT-FOR-DISTRIBUTION.apk dist/SHA256SUMS.txt dist/android-smoke-evidence.tar.gz

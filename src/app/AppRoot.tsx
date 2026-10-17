@@ -318,7 +318,7 @@ function RouteScreen({ route }: { route: Route }) {
     case "details":
       return <Details route={route} />;
     case "history":
-      return <Agenda history />;
+      return <Agenda history selectTemplate={route.selectTemplate} />;
     case "stats":
       return <Statistics route={route} />;
     case "settings":

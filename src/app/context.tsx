@@ -1,6 +1,12 @@
 import { createContext, useContext } from "react";
 import type { Repository, AppointmentDraft } from "../data/repository";
-import type { Preferences, Catalog, Client, Service } from "../domain/models";
+import type {
+  Preferences,
+  Catalog,
+  Client,
+  Service,
+  Appointment,
+} from "../domain/models";
 import type { Palette } from "../theme/theme";
 export type Route = {
   screen:
@@ -23,6 +29,7 @@ export type Route = {
   choice?: "theme" | "lang" | "currency" | "dateFormat";
   selectClient?: (c: Client) => void;
   selectServices?: (s: Service[]) => void;
+  selectTemplate?: (a: Appointment) => void;
   selectedIds?: string[];
   afterSave?: (id: string) => void;
 };
