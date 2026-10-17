@@ -234,3 +234,11 @@ test("legacy decimal totals normalize into cents", async () => {
   });
   assert.equal(snapshot.appointments[0]?.totalCents, 12345);
 });
+test("backup refuses active overlaps instead of importing an invalid agenda", () => {
+  const { repo, draft } = setup();
+  const a = repo.saveAppointment(draft)[0]!;
+  const data = repo.snapshot();
+  data.appointments.push({ ...a, id: "conflicting-import" });
+  assert.throws(() => repo.importSnapshot(data), /conflit/i);
+  assert.equal(repo.list("appointments").length, 1);
+});

@@ -28,103 +28,103 @@ SCR-026,screen,SubscriptionScreen,"Hermes 20860,20869,16030,16034,21790",app-own
 H-16014,handler,createIconSetFromFontello,Hermes F#16014,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
 H-16049,handler,setSubscribed,Hermes F#16049,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-16050,handler,setRemovedAds,Hermes F#16050,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-16460,handler,setAllowSharingStoreAccount,Hermes F#16460,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16460,handler,setAllowSharingStoreAccount,Hermes F#16460,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-16463,handler,setSimulatesAskToBuyInSandbox,Hermes F#16463,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-16475,handler,setAppstackAttributionParams,Hermes F#16475,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16490,handler,setDebugLogsEnabled,Hermes F#16490,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16493,handler,setLogLevel,Hermes F#16493,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16496,handler,setLogHandler,Hermes F#16496,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16566,handler,setAttributes,Hermes F#16566,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16569,handler,setEmail,Hermes F#16569,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16572,handler,setPhoneNumber,Hermes F#16572,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16575,handler,setDisplayName,Hermes F#16575,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16578,handler,setPushToken,Hermes F#16578,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16581,handler,setProxyURLString,Hermes F#16581,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16587,handler,setAdjustID,Hermes F#16587,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16590,handler,setAppsflyerID,Hermes F#16590,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16593,handler,setFBAnonymousID,Hermes F#16593,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16596,handler,setMparticleID,Hermes F#16596,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16599,handler,setCleverTapID,Hermes F#16599,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16475,handler,setAppstackAttributionParams,Hermes F#16475,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16490,handler,setDebugLogsEnabled,Hermes F#16490,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16493,handler,setLogLevel,Hermes F#16493,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16496,handler,setLogHandler,Hermes F#16496,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16566,handler,setAttributes,Hermes F#16566,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16569,handler,setEmail,Hermes F#16569,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16572,handler,setPhoneNumber,Hermes F#16572,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16575,handler,setDisplayName,Hermes F#16575,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16578,handler,setPushToken,Hermes F#16578,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16581,handler,setProxyURLString,Hermes F#16581,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16587,handler,setAdjustID,Hermes F#16587,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16590,handler,setAppsflyerID,Hermes F#16590,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16593,handler,setFBAnonymousID,Hermes F#16593,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16596,handler,setMparticleID,Hermes F#16596,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16599,handler,setCleverTapID,Hermes F#16599,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-16602,handler,setMixpanelDistinctID,Hermes F#16602,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-16605,handler,setFirebaseAppInstanceID,Hermes F#16605,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16605,handler,setFirebaseAppInstanceID,Hermes F#16605,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-16608,handler,setTenjinAnalyticsInstallationID,Hermes F#16608,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-16611,handler,setKochavaDeviceID,Hermes F#16611,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16614,handler,setOnesignalID,Hermes F#16614,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16617,handler,setOnesignalUserID,Hermes F#16617,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16620,handler,setAirshipChannelID,Hermes F#16620,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16623,handler,setMediaSource,Hermes F#16623,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16626,handler,setMediaCampaign,Hermes F#16626,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16629,handler,setCampaign,Hermes F#16629,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16632,handler,setAdGroup,Hermes F#16632,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16635,handler,setAd,Hermes F#16635,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16638,handler,setKeyword,Hermes F#16638,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16641,handler,setCreative,Hermes F#16641,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16644,handler,setAppsFlyerConversionData,Hermes F#16644,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16785,handler,deleteProperty,Hermes F#16785,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-16798,handler,setPrototypeOf,Hermes F#16798,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-17221,handler,selectOption,Hermes F#17221,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-17448,handler,setMutedOverride,Hermes F#17448,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-17619,handler,selectTab,Hermes F#17619,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-17679,handler,onWalletButtonReady,Hermes F#17679,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-16611,handler,setKochavaDeviceID,Hermes F#16611,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16614,handler,setOnesignalID,Hermes F#16614,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16617,handler,setOnesignalUserID,Hermes F#16617,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16620,handler,setAirshipChannelID,Hermes F#16620,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16623,handler,setMediaSource,Hermes F#16623,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16626,handler,setMediaCampaign,Hermes F#16626,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16629,handler,setCampaign,Hermes F#16629,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16632,handler,setAdGroup,Hermes F#16632,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16635,handler,setAd,Hermes F#16635,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16638,handler,setKeyword,Hermes F#16638,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16641,handler,setCreative,Hermes F#16641,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16644,handler,setAppsFlyerConversionData,Hermes F#16644,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16785,handler,deleteProperty,Hermes F#16785,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-16798,handler,setPrototypeOf,Hermes F#16798,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-17221,handler,selectOption,Hermes F#17221,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-17448,handler,setMutedOverride,Hermes F#17448,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-17619,handler,selectTab,Hermes F#17619,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-17679,handler,onWalletButtonReady,Hermes F#17679,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-17932,handler,onPurchase,Hermes F#17932,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-17933,handler,onButtonAction,Hermes F#17933,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-17935,handler,updateSatisfaction,Hermes F#17935,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-18095,handler,onNavigateToUrlClicked,Hermes F#18095,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-18097,handler,onVisitCustomerCenterClicked,Hermes F#18097,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-17935,handler,updateSatisfaction,Hermes F#17935,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-18095,handler,onNavigateToUrlClicked,Hermes F#18095,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-18097,handler,onVisitCustomerCenterClicked,Hermes F#18097,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-18100,handler,onRestorePurchasesClicked,Hermes F#18100,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-18101,handler,onActionTriggered,Hermes F#18101,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-18101,handler,onActionTriggered,Hermes F#18101,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-18109,handler,onError,Hermes F#18109,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-18132,handler,onClose,Hermes F#18132,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-18700,handler,onLoadingComplete,Hermes F#18700,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-18701,handler,onEmailChange,Hermes F#18701,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-18702,handler,onPaymentInfoChange,Hermes F#18702,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-18703,handler,onAddressInfoChange,Hermes F#18703,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-18707,handler,onExpressCheckoutElementSubmit,Hermes F#18707,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-18719,handler,onChange,Hermes F#18719,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-18773,handler,onDismiss,Hermes F#18773,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-18132,handler,onClose,Hermes F#18132,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-18700,handler,onLoadingComplete,Hermes F#18700,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-18701,handler,onEmailChange,Hermes F#18701,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-18702,handler,onPaymentInfoChange,Hermes F#18702,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-18703,handler,onAddressInfoChange,Hermes F#18703,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-18707,handler,onExpressCheckoutElementSubmit,Hermes F#18707,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-18719,handler,onChange,Hermes F#18719,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-18773,handler,onDismiss,Hermes F#18773,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-19640,handler,onContinue,Hermes F#19640,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-19914,handler,setLogLevel,Hermes F#19914,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-19915,handler,setLogHandler,Hermes F#19915,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20001,handler,applyUpdates,Hermes F#20001,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20054,handler,onReady,Hermes F#20054,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20093,handler,handleConnect,Hermes F#20093,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20192,handler,updateElementsConfiguration,Hermes F#20192,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20194,handler,createPaymentElement,Hermes F#20194,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20196,handler,createAddressElement,Hermes F#20196,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20197,handler,createExpressCheckoutElement,Hermes F#20197,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20198,handler,createLinkAuthenticationElement,Hermes F#20198,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20355,handler,setAttributes,Hermes F#20355,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20419,handler,updateUser,Hermes F#20419,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-19914,handler,setLogLevel,Hermes F#19914,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-19915,handler,setLogHandler,Hermes F#19915,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20001,handler,applyUpdates,Hermes F#20001,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20054,handler,onReady,Hermes F#20054,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20093,handler,handleConnect,Hermes F#20093,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20192,handler,updateElementsConfiguration,Hermes F#20192,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20194,handler,createPaymentElement,Hermes F#20194,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20196,handler,createAddressElement,Hermes F#20196,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20197,handler,createExpressCheckoutElement,Hermes F#20197,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20198,handler,createLinkAuthenticationElement,Hermes F#20198,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20355,handler,setAttributes,Hermes F#20355,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20419,handler,updateUser,Hermes F#20419,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-20451,handler,updatePurchase,Hermes F#20451,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-20514,handler,onPurchaseClicked,Hermes F#20514,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-20515,handler,onExitBack,Hermes F#20515,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20516,handler,onBackClicked,Hermes F#20516,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20515,handler,onExitBack,Hermes F#20515,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20516,handler,onBackClicked,Hermes F#20516,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-20517,handler,onPurchaseClicked,Hermes F#20517,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-20518,handler,onError,Hermes F#20518,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20550,handler,onFinished,Hermes F#20550,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20518,handler,onError,Hermes F#20518,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20550,handler,onFinished,Hermes F#20550,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-20551,handler,onError,Hermes F#20551,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-20554,handler,onButtonReady,Hermes F#20554,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20554,handler,onButtonReady,Hermes F#20554,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-20569,handler,onValidPurchase,Hermes F#20569,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-20570,handler,onFailedPurchase,Hermes F#20570,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-20571,handler,onCancel,Hermes F#20571,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20592,handler,createCheckoutOnCloseHandler,Hermes F#20592,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20595,handler,createCheckoutOnFinishedHandler,Hermes F#20595,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20600,handler,createCheckoutOnErrorHandler,Hermes F#20600,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20614,handler,setAttributes,Hermes F#20614,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20651,handler,setLogLevel,Hermes F#20651,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20652,handler,setLogHandler,Hermes F#20652,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20653,handler,setPlatformInfo,Hermes F#20653,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20674,handler,setAttributes,Hermes F#20674,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20678,handler,setEmail,Hermes F#20678,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20682,handler,setPhoneNumber,Hermes F#20682,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20686,handler,setDisplayName,Hermes F#20686,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20571,handler,onCancel,Hermes F#20571,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20592,handler,createCheckoutOnCloseHandler,Hermes F#20592,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20595,handler,createCheckoutOnFinishedHandler,Hermes F#20595,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20600,handler,createCheckoutOnErrorHandler,Hermes F#20600,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20614,handler,setAttributes,Hermes F#20614,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20651,handler,setLogLevel,Hermes F#20651,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20652,handler,setLogHandler,Hermes F#20652,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20653,handler,setPlatformInfo,Hermes F#20653,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20674,handler,setAttributes,Hermes F#20674,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20678,handler,setEmail,Hermes F#20678,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20682,handler,setPhoneNumber,Hermes F#20682,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20686,handler,setDisplayName,Hermes F#20686,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-20733,handler,applyPresentedOfferingContextToOffering,Hermes F#20733,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-20743,handler,setReservedCustomerAttribute,Hermes F#20743,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20743,handler,setReservedCustomerAttribute,Hermes F#20743,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-20747,handler,createNativePurchaseParams,Hermes F#20747,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-20750,handler,handleError,Hermes F#20750,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20753,handler,setLogLevel,Hermes F#20753,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20754,handler,setLogHandler,Hermes F#20754,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20757,handler,setProxyUrl,Hermes F#20757,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20750,handler,handleError,Hermes F#20750,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20753,handler,setLogLevel,Hermes F#20753,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20754,handler,setLogHandler,Hermes F#20754,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-20757,handler,setProxyUrl,Hermes F#20757,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-20774,handler,handlePurchase,Hermes F#20774,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-20777,handler,handleFailedPurchase,Hermes F#20777,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-20778,handler,handleCancel,Hermes F#20778,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
@@ -136,10 +136,10 @@ H-20804,handler,onPress,Hermes F#20804,unknown,,,blocked,Autoria/comportamento n
 H-20805,handler,onDismiss,Hermes F#20805,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
 H-20869,handler,handlePressBuyButton,Hermes F#20869,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-20870,handler,selectPlan,Hermes F#20870,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-20875,handler,onPress,Hermes F#20875,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20876,handler,onPress,Hermes F#20876,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20877,handler,onClose,Hermes F#20877,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-20934,handler,setUserProps,Hermes F#20934,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-20875,handler,onPress,Hermes F#20875,app-owned/business,src/features/settings/Settings.tsx,,implemented,"Oferta/restauração comercial substituída por explicação de recursos gratuitos. Sem compras, anúncios ou assinatura."
+H-20876,handler,onPress,Hermes F#20876,app-owned/business,src/features/settings/Settings.tsx,,implemented,"Oferta/restauração comercial substituída por explicação de recursos gratuitos. Sem compras, anúncios ou assinatura."
+H-20877,handler,onClose,Hermes F#20877,app-owned/business,src/features/settings/Settings.tsx,,implemented,"Oferta/restauração comercial substituída por explicação de recursos gratuitos. Sem compras, anúncios ou assinatura."
+H-20934,handler,setUserProps,Hermes F#20934,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-20951,handler,setServerURL,Hermes F#20951,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-20952,handler,setLoggingEnabled,Hermes F#20952,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-20953,handler,setFlushOnBackground,Hermes F#20953,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
@@ -150,48 +150,48 @@ H-20971,handler,deleteGroup,Hermes F#20971,app-owned/business,src/features/setti
 H-20996,handler,setOnce,Hermes F#20996,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-21005,handler,deleteUser,Hermes F#21005,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-21009,handler,setOnce,Hermes F#21009,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-21048,handler,setLoggingEnabled,Hermes F#21048,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21049,handler,setServerURL,Hermes F#21049,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21050,handler,setUseIpAddressForGeolocation,Hermes F#21050,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21051,handler,setFlushBatchSize,Hermes F#21051,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21128,handler,setOnce,Hermes F#21128,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21160,handler,deleteUser,Hermes F#21160,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21196,handler,setGroup,Hermes F#21196,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21209,handler,deleteGroup,Hermes F#21209,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21048,handler,setLoggingEnabled,Hermes F#21048,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21049,handler,setServerURL,Hermes F#21049,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21050,handler,setUseIpAddressForGeolocation,Hermes F#21050,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21051,handler,setFlushBatchSize,Hermes F#21051,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21128,handler,setOnce,Hermes F#21128,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21160,handler,deleteUser,Hermes F#21160,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21196,handler,setGroup,Hermes F#21196,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21209,handler,deleteGroup,Hermes F#21209,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-21239,handler,handleBatchError,Hermes F#21239,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-21256,handler,updateQueueInStorage,Hermes F#21256,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21309,handler,updateDeviceId,Hermes F#21309,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21315,handler,updateDistinctId,Hermes F#21315,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21322,handler,updateUserId,Hermes F#21322,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21332,handler,updateSuperProperties,Hermes F#21332,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21342,handler,updateTimeEvents,Hermes F#21342,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21352,handler,updateOptedOut,Hermes F#21352,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21362,handler,saveQueue,Hermes F#21362,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21370,handler,updateAppHasOpenedBefore,Hermes F#21370,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21424,handler,setItem,Hermes F#21424,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21438,handler,setItem,Hermes F#21438,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21256,handler,updateQueueInStorage,Hermes F#21256,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21309,handler,updateDeviceId,Hermes F#21309,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21315,handler,updateDistinctId,Hermes F#21315,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21322,handler,updateUserId,Hermes F#21322,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21332,handler,updateSuperProperties,Hermes F#21332,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21342,handler,updateTimeEvents,Hermes F#21342,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21352,handler,updateOptedOut,Hermes F#21352,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21362,handler,saveQueue,Hermes F#21362,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21370,handler,updateAppHasOpenedBefore,Hermes F#21370,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21424,handler,setItem,Hermes F#21424,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21438,handler,setItem,Hermes F#21438,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-21461,handler,setLoggingEnabled,Hermes F#21461,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-21463,handler,setServerURL,Hermes F#21463,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-21465,handler,setUseIpAddressForGeolocation,Hermes F#21465,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-21467,handler,setFlushBatchSize,Hermes F#21467,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-21469,handler,setFlushInterval,Hermes F#21469,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
 H-21602,handler,handleError,Hermes F#21602,app-owned/business,src/features/settings/Settings.tsx,,inferred,Substituído por acesso gratuito; sem compra/anúncio/telemetria.
-H-21607,handler,updateContext,Hermes F#21607,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21677,handler,updateContext,Hermes F#21677,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21795,handler,handleRestore,Hermes F#21795,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21825,handler,selectOrdinal,Hermes F#21825,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21880,handler,setDefaults,Hermes F#21880,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21887,handler,setI18n,Hermes F#21887,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21953,handler,createStyles,Hermes F#21953,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21971,handler,createService,Hermes F#21971,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21977,handler,updateService,Hermes F#21977,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21981,handler,deleteService,Hermes F#21981,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21985,handler,setServices,Hermes F#21985,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21991,handler,createService,Hermes F#21991,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21995,handler,updateService,Hermes F#21995,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-21999,handler,deleteService,Hermes F#21999,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-22003,handler,setServices,Hermes F#22003,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-22011,handler,saveAll,Hermes F#22011,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-21607,handler,updateContext,Hermes F#21607,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21677,handler,updateContext,Hermes F#21677,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21795,handler,handleRestore,Hermes F#21795,app-owned/business,src/features/settings/Settings.tsx,,implemented,"Oferta/restauração comercial substituída por explicação de recursos gratuitos. Sem compras, anúncios ou assinatura."
+H-21825,handler,selectOrdinal,Hermes F#21825,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21880,handler,setDefaults,Hermes F#21880,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21887,handler,setI18n,Hermes F#21887,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-21953,handler,createStyles,Hermes F#21953,app-owned/business,src/features/settings/Settings.tsx,,implemented,"Oferta/restauração comercial substituída por explicação de recursos gratuitos. Sem compras, anúncios ou assinatura."
+H-21971,handler,createService,Hermes F#21971,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-21977,handler,updateService,Hermes F#21977,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-21981,handler,deleteService,Hermes F#21981,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-21985,handler,setServices,Hermes F#21985,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-21991,handler,createService,Hermes F#21991,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-21995,handler,updateService,Hermes F#21995,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-21999,handler,deleteService,Hermes F#21999,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-22003,handler,setServices,Hermes F#22003,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-22011,handler,saveAll,Hermes F#22011,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
 H-22038,handler,openServiceForm,Hermes F#22038,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
 H-22040,handler,onUpgradePress,Hermes F#22040,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
 H-22041,handler,onPress,Hermes F#22041,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
@@ -225,24 +225,24 @@ H-22707,handler,updateValue,Hermes F#22707,framework/dependency,,,inferred,Bibli
 H-22738,handler,createStyles,Hermes F#22738,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
 H-22750,handler,onDelete,Hermes F#22750,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
 H-22751,handler,handleDeletePress,Hermes F#22751,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
-H-22798,handler,setCustomValidity,Hermes F#22798,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-22910,handler,setFocus,Hermes F#22910,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23045,handler,createValidation,Hermes F#23045,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23048,handler,createError,Hermes F#23048,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23049,handler,handleResult,Hermes F#23049,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23050,handler,handleError,Hermes F#23050,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23080,handler,setLocale,Hermes F#23080,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23302,handler,setFields,Hermes F#23302,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-22798,handler,setCustomValidity,Hermes F#22798,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-22910,handler,setFocus,Hermes F#22910,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-23045,handler,createValidation,Hermes F#23045,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-23048,handler,createError,Hermes F#23048,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-23049,handler,handleResult,Hermes F#23049,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-23050,handler,handleError,Hermes F#23050,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-23080,handler,setLocale,Hermes F#23080,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
+H-23302,handler,setFields,Hermes F#23302,framework/dependency,,,inferred,"Região de SDKs comerciais, analytics, i18n ou validação; classificação heurística documentada. Não usada como prova de paridade."
 H-23423,handler,createStyles,Hermes F#23423,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23441,handler,createClient,Hermes F#23441,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23447,handler,updateClient,Hermes F#23447,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23451,handler,deleteClient,Hermes F#23451,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23455,handler,setClients,Hermes F#23455,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23461,handler,createClient,Hermes F#23461,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23465,handler,updateClient,Hermes F#23465,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23469,handler,deleteClient,Hermes F#23469,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23473,handler,setClients,Hermes F#23473,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-23481,handler,saveAll,Hermes F#23481,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-23441,handler,createClient,Hermes F#23441,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-23447,handler,updateClient,Hermes F#23447,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-23451,handler,deleteClient,Hermes F#23451,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-23455,handler,setClients,Hermes F#23455,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-23461,handler,createClient,Hermes F#23461,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-23465,handler,updateClient,Hermes F#23465,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-23469,handler,deleteClient,Hermes F#23469,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-23473,handler,setClients,Hermes F#23473,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
+H-23481,handler,saveAll,Hermes F#23481,app-owned/business,src/data/repository.ts,src/tests/repository.test.ts,implemented,CRUD de clientes/serviços; SQLite transacional e snapshots testados. Correspondência do handler original ainda não validada dinamicamente.
 H-23502,handler,openClientForm,Hermes F#23502,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
 H-23503,handler,handleSchedule,Hermes F#23503,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
 H-23505,handler,onUpgradePress,Hermes F#23505,app-owned/business,src/features/catalog/Catalog.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
@@ -340,19 +340,19 @@ H-24624,handler,onNativeEvent,Hermes F#24624,framework/dependency,,,inferred,Bib
 H-24646,handler,onNativeAdEvent,Hermes F#24646,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
 H-24651,handler,createForAdRequest,Hermes F#24651,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
 H-24703,handler,createForAdRequest,Hermes F#24703,framework/dependency,,,inferred,Biblioteca interna; não é funcionalidade a copiar.
-H-24796,handler,onPress,Hermes F#24796,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-24797,handler,onPress,Hermes F#24797,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-24805,handler,onPress,Hermes F#24805,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-24809,handler,createStyles,Hermes F#24809,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-24814,handler,onPress,Hermes F#24814,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-24819,handler,createStyles,Hermes F#24819,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-24850,handler,onPress,Hermes F#24850,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-24877,handler,createStyles,Hermes F#24877,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-25000,handler,createDateTimeSetEvtParams,Hermes F#25000,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-25001,handler,createDismissEvtParams,Hermes F#25001,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-25002,handler,createNeutralEvtParams,Hermes F#25002,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-25008,handler,onChange,Hermes F#25008,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
-H-25009,handler,onChange,Hermes F#25009,unknown,,,blocked,Autoria/comportamento não resolvido; requer investigação seletiva.
+H-24796,handler,onPress,Hermes F#24796,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,AgendaHeader/seleção de data/grade: associação seletiva por refs e propriedades. Layout próprio; comportamento individual pendente.
+H-24797,handler,onPress,Hermes F#24797,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,AgendaHeader/seleção de data/grade: associação seletiva por refs e propriedades. Layout próprio; comportamento individual pendente.
+H-24805,handler,onPress,Hermes F#24805,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,AgendaHeader/seleção de data/grade: associação seletiva por refs e propriedades. Layout próprio; comportamento individual pendente.
+H-24809,handler,createStyles,Hermes F#24809,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,AgendaHeader/seleção de data/grade: associação seletiva por refs e propriedades. Layout próprio; comportamento individual pendente.
+H-24814,handler,onPress,Hermes F#24814,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,AgendaHeader/seleção de data/grade: associação seletiva por refs e propriedades. Layout próprio; comportamento individual pendente.
+H-24819,handler,createStyles,Hermes F#24819,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,AgendaHeader/seleção de data/grade: associação seletiva por refs e propriedades. Layout próprio; comportamento individual pendente.
+H-24850,handler,onPress,Hermes F#24850,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,AgendaHeader/seleção de data/grade: associação seletiva por refs e propriedades. Layout próprio; comportamento individual pendente.
+H-24877,handler,createStyles,Hermes F#24877,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,AgendaHeader/seleção de data/grade: associação seletiva por refs e propriedades. Layout próprio; comportamento individual pendente.
+H-25000,handler,createDateTimeSetEvtParams,Hermes F#25000,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,AgendaHeader/seleção de data/grade: associação seletiva por refs e propriedades. Layout próprio; comportamento individual pendente.
+H-25001,handler,createDismissEvtParams,Hermes F#25001,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,AgendaHeader/seleção de data/grade: associação seletiva por refs e propriedades. Layout próprio; comportamento individual pendente.
+H-25002,handler,createNeutralEvtParams,Hermes F#25002,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,AgendaHeader/seleção de data/grade: associação seletiva por refs e propriedades. Layout próprio; comportamento individual pendente.
+H-25008,handler,onChange,Hermes F#25008,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,AgendaHeader/seleção de data/grade: associação seletiva por refs e propriedades. Layout próprio; comportamento individual pendente.
+H-25009,handler,onChange,Hermes F#25009,app-owned/business,src/features/agenda/Agenda.tsx,,inferred,AgendaHeader/seleção de data/grade: associação seletiva por refs e propriedades. Layout próprio; comportamento individual pendente.
 H-25018,handler,handleChooseService,Hermes F#25018,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
 H-25019,handler,handleRepeatPress,Hermes F#25019,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.
 H-25020,handler,handleToggleWeeklyRepeat,Hermes F#25020,app-owned/business,src/features/agenda/Wizard.tsx,,inferred,Associação por região é heurística; handler individual requer revisão dinâmica.

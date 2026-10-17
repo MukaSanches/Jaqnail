@@ -357,5 +357,15 @@ export function validateSnapshot(input: unknown): Snapshot {
     )
       throw new Error("Totais inconsistentes no backup.");
   }
+  const active = d.appointments
+    .filter((a) => !a.deletedAt && a.status === "active")
+    .sort((a, b) => Date.parse(a.startsAt) - Date.parse(b.startsAt));
+  let previousEnd = -Infinity;
+  for (const a of active) {
+    const start = Date.parse(a.startsAt);
+    if (start < previousEnd)
+      throw new Error("Agendamentos ativos conflitantes no backup.");
+    previousEnd = start + a.duration * 60_000;
+  }
   return d;
 }
