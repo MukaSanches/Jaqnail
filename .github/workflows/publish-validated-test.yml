@@ -1,0 +1,29 @@
+name: Publish validated experimental APK
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source, upload checksums and publish experimental release
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(gh api repos/${{ github.repository }}/actions/runs/38996389955 --jq '.conclusion')" = success
+          test "$(gh api repos/${{ github.repository }}/actions/runs/38996389955 --jq '.head_sha')" = f89fbbb88b2e6c6c53a3963174f4ff29238dbe3d
+          test "$(gh api repos/${{ github.repository }}/releases/415546808 --jq '.draft')" = true
+          mkdir -p dist/test
+          gh release download validation-f89fbbb88b2e --pattern 'Jaqnail-v1.0.0-test.1.apk' --dir dist/test
+          printf '%s\n' 'cb6d4a3de4505a93847b76e1584f9a3e8e874638f6aff33438513bbcebca357f  Jaqnail-v1.0.0-test.1.apk' > dist/test/SHA256SUMS.txt
+          (cd dist/test && sha256sum -c SHA256SUMS.txt)
+          gh release upload validation-f89fbbb88b2e dist/test/SHA256SUMS.txt docs/evidence/test-apk-signature.txt --clobber
+          gh release edit validation-f89fbbb88b2e --tag v1.0.0-test.1 --title 'Jaqnail v1.0.0-test.1 — versão experimental' --notes-file docs/TEST_RELEASE_NOTES.md --prerelease --draft=false
+          test "$(gh api repos/${{ github.repository }}/releases/tags/v1.0.0-test.1 --jq '.prerelease')" = true
+          test "$(gh api repos/${{ github.repository }}/releases/tags/v1.0.0-test.1 --jq '.draft')" = false

@@ -4,7 +4,7 @@
 
 Agenda e gestão para manicures e nail designers. **Desenvolvido por Samuel Sanches.** Android, offline, sem login e sem recursos pagos.
 
-> **Estado: v1.0.0 em desenvolvimento e validação.** Não há APK estável anunciado. Consulte o [relatório real](docs/RELEASE_REPORT.md) antes de instalar qualquer artefato de teste.
+> **APK de teste disponível:** [baixar Jaqnail v1.0.0-test.1](https://github.com/MukaSanches/Jaqnail/releases/download/v1.0.0-test.1/Jaqnail-v1.0.0-test.1.apk) · [Release experimental](https://github.com/MukaSanches/Jaqnail/releases/tag/v1.0.0-test.1). Instalação e persistência verificadas em Android API 35. Assinatura de teste; a versão estável v1.0.0 ainda não foi publicada. Veja o [relatório](docs/RELEASE_REPORT.md).
 
 [Releases e downloads publicados](https://github.com/MukaSanches/Jaqnail/releases) · [Cobertura rastreável](docs/PARITY_MATRIX.csv) · [Guia de uso](docs/USER_GUIDE_PTBR.md) · [Privacidade](docs/PRIVACY.md)
 
@@ -20,6 +20,12 @@ Agenda e gestão para manicures e nail designers. **Desenvolvido por Samuel Sanc
 - Alertas locais opcionais; WhatsApp com consentimento e prévia, sem envio automático.
 
 As funcionalidades têm graus diferentes de validação. Os testes executados e limitações estão no relatório. Inglês é parcial; equivalência dinâmica integral com a referência não foi atestada.
+
+## Capturas reais do Android
+
+<img src="docs/screenshots/agenda.png" alt="Agenda executada no Android" width="270" /> <img src="docs/screenshots/cliente.png" alt="Cliente persistido no SQLite Android" width="270" />
+
+Capturadas pelo smoke test do commit `f89fbbb`, sem montagem ou dados de produção.
 
 ## Desenvolvimento
 

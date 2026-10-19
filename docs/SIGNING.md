@@ -15,3 +15,7 @@ Por autorização expressa do proprietário, foi criada uma identidade RSA 3072 
 Antes de encerrar o ambiente, o proprietário deve guardar a keystore em backup privado cifrado e a senha em gerenciador de senhas, separadamente. A existência no workspace não substitui uma cópia externa recuperável. Não gere outra chave para atualizar este pacote. O arquivo `credentials.json` é secreto e nunca deve ir ao GitHub como artifact, commit ou Release.
 
 A integração GitHub desta sessão pode enviar commits, mas `GET /actions/secrets/public-key` retorna 403; portanto os secrets de Actions ainda precisam ser configurados por alguém com essa capacidade. A assinatura local pode ser feita com `scripts/sign_apk.py`, que usa variáveis de processo para as senhas e grava apenas certificado público/checksum no destino.
+
+## Estado após recriação do ambiente em 19/10/2026
+
+O diretório privado da sessão anterior **não está presente** no ambiente atual. Não foi publicada nenhuma versão estável com aquela identidade. A keystore anterior não pode ser considerada recuperável ou persistente até localizar uma cópia externa. Não foi criada uma substituta silenciosamente. A versão `v1.0.0-test.1` usa exclusivamente a assinatura de teste do build CI, identificada como `CN=Android Debug`. A distribuição estável requer recuperar a chave anterior ou estabelecer uma nova identidade de distribuição com guarda externa segura e configurar os secrets; a API continua retornando 403. Nunca dependa apenas de diretórios efêmeros de uma sessão.
