@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { FlatList, Alert } from "react-native";
 import { useApp, type Route } from "../../app/context";
 import {
@@ -20,13 +20,21 @@ const singular = {
   materials: "material",
 };
 export function CatalogList({ route }: { route: Route }) {
-  const { repo, push, pop } = useApp();
+  const { repo, push, pop, revision } = useApp();
   const kind = route.kind ?? "clients";
   const [query, setQuery] = useState(""),
     [selected, setSelected] = useState<string[]>(route.selectedIds ?? []);
-  const items = repo
-    .list(kind)
+  const [stockFilter, setStockFilter] = useState("all");
+  const stored = useMemo(() => repo.list(kind), [repo, kind, revision]);
+  const items = stored
     .filter((x) => normalize(x.name).includes(normalize(query)))
+    .filter(
+      (x) =>
+        kind !== "materials" ||
+        stockFilter === "all" ||
+        stockState((x as Material).stock, (x as Material).minStock) ===
+          stockFilter,
+    )
     .sort((a, b) => a.name.localeCompare(b.name));
   const add = () =>
     push({
@@ -51,6 +59,26 @@ export function CatalogList({ route }: { route: Route }) {
         testID={`${kind}-search`}
       />
       <Button title={`Adicionar ${singular[kind]}`} onPress={add} />
+      <Label
+        muted
+        style={{ fontSize: 13 }}
+      >{`${items.length} ${kind === "clients" ? "clientes" : kind === "services" ? "serviços" : "materiais"}`}</Label>
+      {kind === "materials" && (
+        <Row>
+          {[
+            ["all", "Todos"],
+            ["baixo", "Estoque baixo"],
+            ["esgotado", "Esgotados"],
+          ].map(([v, t]) => (
+            <Button
+              key={v}
+              title={t!}
+              secondary={stockFilter !== v}
+              onPress={() => setStockFilter(v!)}
+            />
+          ))}
+        </Row>
+      )}
       <FlatList
         data={items}
         keyExtractor={(x) => x.id}
@@ -86,9 +114,6 @@ export function CatalogList({ route }: { route: Route }) {
               </>
             )}
             {kind === "materials" && <Stock item={item as Material} />}
-            <Label
-              muted
-            >{`${items.length} ${kind === "clients" ? "clientes" : kind === "services" ? "serviços" : "materiais"} cadastrados`}</Label>
             {(route.selectClient || route.selectServices) && (
               <Button
                 title="Editar"
@@ -138,7 +163,7 @@ function Stock({ item }: { item: Material }) {
   );
 }
 export function CatalogForm({ route }: { route: Route }) {
-  const { repo, run, pop, notify } = useApp();
+  const { repo, run, pop, notify, push, p, revision } = useApp();
   const kind = route.kind ?? "clients";
   const item = route.id ? repo.get(kind, route.id) : undefined;
   const [name, setName] = useState(item?.name ?? ""),
@@ -159,6 +184,16 @@ export function CatalogForm({ route }: { route: Route }) {
         ? String((item as Material).minStock)
         : "",
     );
+  const history = useMemo(
+    () =>
+      kind === "clients" && item
+        ? repo
+            .list("appointments")
+            .filter((a) => a.clientId === item.id)
+            .sort((a, b) => b.startsAt.localeCompare(a.startsAt))
+        : [],
+    [repo, kind, item?.id, revision],
+  );
   const save = () =>
     run(() => {
       const common = { id: item?.id, name, notes };
@@ -185,6 +220,50 @@ export function CatalogForm({ route }: { route: Route }) {
   return (
     <Page>
       <Label title>{`${item ? "Editar" : "Novo"} ${singular[kind]}`}</Label>
+      {kind === "clients" && item && (
+        <Card>
+          <Label style={{ fontWeight: "700" }}>
+            Relacionamento com a cliente
+          </Label>
+          <Label
+            muted
+          >{`${history.filter((a) => a.status === "active").length} atendimentos ativos · ${history.length} no histórico`}</Label>
+          <Money
+            cents={history
+              .filter((a) => a.status === "active")
+              .reduce((n, a) => n + a.totalCents, 0)}
+          />
+          <Button
+            title="Agendar para esta cliente"
+            onPress={() =>
+              push({
+                screen: "wizard",
+                draft: {
+                  clientId: item.id,
+                  services: [],
+                  startsAt: new Date().toISOString(),
+                  timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                  discountCents: 0,
+                  payment: "pix",
+                  notes: "",
+                },
+              })
+            }
+          />
+          {history.slice(0, 3).map((a) => (
+            <Button
+              key={a.id}
+              secondary
+              title={
+                new Date(a.startsAt).toLocaleDateString(p.lang) +
+                " · " +
+                a.services.map((s) => s.name).join(", ")
+              }
+              onPress={() => push({ screen: "details", id: a.id })}
+            />
+          ))}
+        </Card>
+      )}
       <Field label="Nome" value={name} onChangeText={setName} maxLength={120} />
       {kind === "clients" && (
         <>

@@ -4,7 +4,12 @@ import { useApp } from "../../app/context";
 import { Label, Page, Button, Card, Field } from "../../components/ui";
 import type { Snapshot } from "../../domain/models";
 import { parseBackup, importLegacy } from "../../domain/backup";
-import { shareBackup, pickBackup, exportCSV } from "../../integrations/native";
+import {
+  shareBackup,
+  pickBackup,
+  exportCSV,
+  saveBackupToDevice,
+} from "../../integrations/native";
 export function Backup() {
   const { repo, p, run, notify } = useApp();
   const [preview, setPreview] = useState<Snapshot | null>(null),
@@ -36,7 +41,7 @@ export function Backup() {
         </Label>
         <Label muted>
           {p.lastBackup
-            ? `Compartilhamento aberto em ${new Date(p.lastBackup).toLocaleString()}`
+            ? `Última exportação registrada em ${new Date(p.lastBackup).toLocaleString()}`
             : "Nenhum backup exportado."}
         </Label>
         <Label muted>
@@ -44,6 +49,19 @@ export function Backup() {
           informa se você concluiu ou cancelou o compartilhamento.
         </Label>
       </Card>
+      <Button
+        title="Salvar backup no dispositivo"
+        disabled={busy}
+        onPress={() =>
+          void action(async () => {
+            if (await saveBackupToDevice(repo))
+              notify("Backup salvo e verificado na pasta escolhida.");
+          })
+        }
+      />
+      <Label muted>
+        Escolha uma pasta privada. O arquivo é conferido após a gravação.
+      </Label>
       <Button
         title={busy ? "Processando…" : "Exportar backup"}
         disabled={busy}

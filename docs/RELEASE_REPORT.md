@@ -35,3 +35,7 @@ Regressões corrigidas e testadas: conflito na importação; limite de backup si
 Paridade integral e superioridade de desempenho não comprovadas. Pendentes: inglês completo, handlers anônimos/ambíguos, backup real da referência, alarmes após reboot, TalkBack e múltiplos aparelhos, validação nativa completa de compartilhamento/seleção de arquivos/WhatsApp, benchmarks Android de grande volume. Consulte [matriz rastreável](PARITY_MATRIX.csv) e [cobertura funcional](FEATURE_MATRIX.md). Nenhum dado sensível ou artefato privado de assinatura foi publicado.
 
 O build Android foi validado no GitHub; o ambiente local recriado não retém o JDK/SDK instalados anteriormente. O setup de JavaScript é reproduzível pelo lockfile. Os requisitos de rede e instruções de inicialização foram salvos no rascunho do ambiente; salvar o rascunho não publica nem aplica sua configuração automaticamente.
+
+## Candidato com agenda reformulada — em validação
+
+O código após a versão experimental adiciona calendário e timeline, perfil da cliente, filtros de estoque, gráfico mensal e backup direto em pasta. Typecheck/lint e **52 testes (37 + 15)** passaram localmente. Android versionCode incrementado para 2. O CI procura os quatro secrets do proprietário e usa assinatura persistente quando completos; não promove assinatura debug a estável. O APK publicado acima continua sendo o anterior até o próximo resultado de build/aceite.

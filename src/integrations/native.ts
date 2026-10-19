@@ -135,3 +135,31 @@ export async function exportCSV(name: string, rows: unknown[][]) {
     "text/csv",
   );
 }
+
+/** Save to an owner-selected Android folder, without depending on a share target. */
+export async function saveBackupToDevice(repo: Repository) {
+  const text = serializeBackup(repo.snapshot());
+  const permission =
+    await FileSystem.StorageAccessFramework.requestDirectoryPermissionsAsync();
+  if (!permission.granted) return false;
+  const uri = await FileSystem.StorageAccessFramework.createFileAsync(
+    permission.directoryUri,
+    `Jaqnail-backup-${Date.now()}.json`,
+    "application/json",
+  );
+  try {
+    await FileSystem.writeAsStringAsync(uri, text, {
+      encoding: FileSystem.EncodingType.UTF8,
+    });
+    if ((await FileSystem.readAsStringAsync(uri)) !== text)
+      throw new Error(
+        "Não foi possível verificar o backup salvo. Tente outra pasta.",
+      );
+  } catch (error) {
+    await FileSystem.deleteAsync(uri, { idempotent: true }).catch(() => {});
+    throw error;
+  }
+  repo.setPreferences({ lastBackup: new Date().toISOString() });
+  repo.recordBackup("export-device-verified");
+  return true;
+}

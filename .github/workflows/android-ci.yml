@@ -41,9 +41,28 @@ jobs:
       - run: npm run test:ci
       - run: python3 scripts/check_coverage.py
       - run: npm run prebuild
-      - name: Build standalone TEST APK (debug key, not distribution)
+      - name: Configure signing when all owner secrets are available
+        env:
+          KEYSTORE: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          python3 scripts/configure_ci_signing.py
+      - name: Build standalone Android APK
+        id: build
+        env:
+          JAQNAIL_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          JAQNAIL_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          JAQNAIL_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         working-directory: android
         run: ./gradlew :app:assembleRelease -PreactNativeArchitectures=arm64-v8a,x86_64 --no-daemon --max-workers=2
+      - name: Verify certificate and record provenance
+        run: |
+          mkdir -p dist
+          "$ANDROID_HOME/build-tools/36.0.0/apksigner" verify --verbose --print-certs android/app/build/outputs/apk/release/app-release.apk > dist/signature.txt
+          if [ "$PERSISTENT_SIGNING" = true ] && grep -q 'CN=Android Debug' dist/signature.txt; then exit 1; fi
+          python3 scripts/release_gate.py --digest > dist/product-sha256.txt
       - uses: actions/upload-artifact@v4
         with:
           name: Jaqnail-TEST-APK-NOT-FOR-DISTRIBUTION
@@ -55,6 +74,7 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
       - name: Android installation and launch smoke
+        id: smoke
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 35
@@ -68,13 +88,21 @@ jobs:
           path: dist/smoke/
           if-no-files-found: warn
       - name: Prepare unpublished validation draft
-        if: success() && github.event_name == 'workflow_dispatch' && inputs.validation_draft
+        if: always() && github.ref == 'refs/heads/main' && steps.build.outcome == 'success'
         env:
           GH_TOKEN: ${{ github.token }}
+          SMOKE_OUTCOME: ${{ steps.smoke.outcome }}
         run: |
           tag="validation-${GITHUB_SHA:0:12}"
-          cp android/app/build/outputs/apk/release/app-release.apk dist/Jaqnail-TEST-NOT-FOR-DISTRIBUTION.apk
-          (cd dist && sha256sum Jaqnail-TEST-NOT-FOR-DISTRIBUTION.apk > SHA256SUMS.txt)
+          cp android/app/build/outputs/apk/release/app-release.apk dist/Jaqnail-validation.apk
+          (cd dist && sha256sum Jaqnail-validation.apk > SHA256SUMS.txt)
           tar -czf dist/android-smoke-evidence.tar.gz -C dist smoke
-          printf '%s\n' 'Artefato interno de validação. Assinatura de teste; não distribuir. Este rascunho não é a versão v1.0.0.' > dist/validation-notes.md
-          gh release create "$tag" --draft --prerelease --target "$GITHUB_SHA" --title "Validação Android ${GITHUB_SHA:0:12}" --notes-file dist/validation-notes.md dist/Jaqnail-TEST-NOT-FOR-DISTRIBUTION.apk dist/SHA256SUMS.txt dist/android-smoke-evidence.tar.gz
+          python3 - <<'PYCODE'
+          import os,json,pathlib
+          manifest={'commit':os.environ['GITHUB_SHA'],'run_id':os.environ['GITHUB_RUN_ID'],'persistent_signing':os.environ['PERSISTENT_SIGNING']=='true','android_smoke':os.environ['SMOKE_OUTCOME'],'product_sha256':pathlib.Path('dist/product-sha256.txt').read_text().strip()}
+          pathlib.Path('dist/manifest.json').write_text(json.dumps(manifest,indent=2))
+          PYCODE
+          gh release create "$tag" --draft --prerelease --target "$GITHUB_SHA" --title "Validação Android ${GITHUB_SHA:0:12}" --notes-file dist/manifest.json dist/Jaqnail-validation.apk dist/SHA256SUMS.txt dist/signature.txt dist/manifest.json dist/android-smoke-evidence.tar.gz
+      - name: Remove private signing copy
+        if: always()
+        run: rm -f "$RUNNER_TEMP/jaqnail-release.p12"

@@ -7,3 +7,7 @@ Implementados: onboarding; cadastros e pesquisa; estoque e estados; agenda dia/s
 Recursos PRO comerciais são substituídos por acesso gratuito, sem compras/restauração de compras, anúncios ou telemetria. Funções internas de bibliotecas não são metas de reprodução.
 
 Pendências: inglês completo; revisão dinâmica de handlers anônimos; interoperabilidade com backup real da referência; comparação do APK original; TalkBack/manual em múltiplas telas e dispositivos; benchmarks de grande volume; validação de alarmes/reboot; assinatura de distribuição e release condicionadas à evidência. A interface é original, sem alegação pixel-perfect.
+
+## Melhorias do candidato atualizado
+
+Calendário mensal com indicadores por dia, faixa semanal, linha do tempo, agendamento pelo horário livre, resumo diário compacto; histórico/atalho de agendamento no cadastro da cliente; filtros de estoque baixo/esgotado; gráfico mensal; backup direto em pasta Android com verificação após escrita; navegação com ícones originais e avisos compactos. Testes: 37 domínio/SQLite/calendário + 15 UI/integração; novo smoke Android cobre cadastros, estoque, agenda, cancelamento/reativação, estatísticas e persistência. O resultado Android será registrado após a execução, sem antecipar aprovação.

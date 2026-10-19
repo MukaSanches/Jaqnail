@@ -19,3 +19,9 @@ A integração GitHub desta sessão pode enviar commits, mas `GET /actions/secre
 ## Estado após recriação do ambiente em 19/10/2026
 
 O diretório privado da sessão anterior **não está presente** no ambiente atual. Não foi publicada nenhuma versão estável com aquela identidade. A keystore anterior não pode ser considerada recuperável ou persistente até localizar uma cópia externa. Não foi criada uma substituta silenciosamente. A versão `v1.0.0-test.1` usa exclusivamente a assinatura de teste do build CI, identificada como `CN=Android Debug`. A distribuição estável requer recuperar a chave anterior ou estabelecer uma nova identidade de distribuição com guarda externa segura e configurar os secrets; a API continua retornando 403. Nunca dependa apenas de diretórios efêmeros de uma sessão.
+
+## Configuração pelo proprietário (caminho escolhido)
+
+Em um computador confiável com JDK e GitHub CLI autenticado como proprietário, execute `python3 scripts/setup_owner_signing.py /caminho/privado/jaqnail`. O script cria uma única keystore PKCS12 RSA3072 e senhas aleatórias fortes, reutiliza os arquivos em execuções posteriores e configura os quatro secrets sem imprimir valores. Guarde uma cópia cifrada da keystore e a senha separadamente. Não execute em uma sessão efêmera como único local de guarda. Alternativamente, cadastre esses quatro valores em Settings → Secrets and variables → Actions. Nunca os envie pelo chat.
+
+O CI agora usa a assinatura persistente quando todos os secrets existem, falha se apenas parte estiver configurada e identifica explicitamente os builds sem secrets como teste. A publicação estável continua condicionada à verificação do certificado e aceite do APK.

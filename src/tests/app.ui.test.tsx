@@ -94,7 +94,7 @@ test("service and material forms save real rows and stock controls persist", () 
   fireEvent.changeText(screen.getByLabelText("Duração em minutos"), "45");
   fireEvent.press(screen.getByText("Salvar"));
   expect(r.list("services")[0]?.priceCents).toBe(4050);
-  fireEvent.press(screen.getByText("Fechar aviso"));
+  fireEvent.press(screen.getByLabelText("Fechar aviso"));
   fireEvent.press(screen.getByText("Estoque"));
   fireEvent.press(screen.getByText("Adicionar material"));
   fireEvent.changeText(screen.getByLabelText("Nome"), "Lixa");
@@ -110,7 +110,7 @@ test("wizard blocks missing client and preserves draft when adding a client inli
   fireEvent.press(screen.getByText("Novo agendamento"));
   fireEvent.press(screen.getByText("Próximo"));
   expect(screen.getByText("Selecione um cliente.")).toBeTruthy();
-  fireEvent.press(screen.getByText("Fechar aviso"));
+  fireEvent.press(screen.getByLabelText("Fechar aviso"));
   fireEvent.press(screen.getByText("Selecionar cliente"));
   fireEvent.press(screen.getByText("Adicionar cliente"));
   fireEvent.changeText(screen.getByLabelText("Nome"), "Nova Cliente");
@@ -288,6 +288,11 @@ test("details cancellation, reactivation, deletion and undo change persisted app
   })[0]!;
   const alert = jest.spyOn(Alert, "alert").mockImplementation(() => {});
   render(<AppRoot repository={r} />);
+  fireEvent.press(screen.getByText("Buscar"));
+  fireEvent.changeText(
+    screen.getByLabelText("Buscar em tudo"),
+    "Cliente Detalhes",
+  );
   fireEvent.press(screen.getByText("Cliente Detalhes"));
   fireEvent.press(screen.getByText("Cancelar agendamento"));
   confirmAlert("Confirmar");
@@ -301,4 +306,55 @@ test("details cancellation, reactivation, deletion and undo change persisted app
   fireEvent.press(screen.getByText("Desfazer"));
   expect(r.list("appointments")).toHaveLength(1);
   alert.mockRestore();
+});
+test("calendar quick-add preserves tomorrow and selected hour through the full wizard", () => {
+  const r = repo();
+  r.setPreferences({ onboarded: true });
+  r.saveCatalog("clients", {
+    name: "Cliente Calendário",
+    phone: "",
+    notes: "",
+    consent: false,
+  });
+  r.saveCatalog("services", {
+    name: "Serviço Calendário",
+    priceCents: 6000,
+    duration: 60,
+    notes: "",
+  });
+  render(<AppRoot repository={r} />);
+  fireEvent.press(screen.getByText("Amanhã"));
+  fireEvent.press(screen.getByLabelText("Agendar às 08:00"));
+  fireEvent.press(screen.getByText("Selecionar cliente"));
+  fireEvent.press(screen.getByText("Cliente Calendário"));
+  fireEvent.press(screen.getByText("Próximo"));
+  fireEvent.press(screen.getByText("Escolher serviços"));
+  fireEvent.press(screen.getByText("Serviço Calendário"));
+  fireEvent.press(screen.getByText("Confirmar seleção"));
+  fireEvent.press(screen.getByText("Próximo"));
+  fireEvent.press(screen.getByText("Salvar agendamento"));
+  const a = r.list("appointments")[0]!;
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  expect(new Date(a.startsAt).getDate()).toBe(tomorrow.getDate());
+  expect(new Date(a.startsAt).getHours()).toBe(8);
+  expect(a.totalCents).toBe(6000);
+});
+test("stock filters separate low and depleted materials", () => {
+  const r = repo();
+  r.setPreferences({ onboarded: true });
+  for (const [name, stock] of [
+    ["Lixa normal", 10],
+    ["Gel baixo", 2],
+    ["Esmalte esgotado", 0],
+  ] as const)
+    r.saveCatalog("materials", { name, stock, minStock: 3, notes: "" });
+  render(<AppRoot repository={r} />);
+  fireEvent.press(screen.getByText("Estoque"));
+  fireEvent.press(screen.getByText("Esgotados"));
+  expect(screen.getByText("Esmalte esgotado")).toBeTruthy();
+  expect(screen.queryByText("Gel baixo")).toBeNull();
+  fireEvent.press(screen.getByText("Estoque baixo"));
+  expect(screen.getByText("Gel baixo")).toBeTruthy();
+  expect(screen.queryByText("Esmalte esgotado")).toBeNull();
 });

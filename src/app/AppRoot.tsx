@@ -6,7 +6,6 @@ import {
   BackHandler,
   Alert,
   useColorScheme,
-  ScrollView,
   AppState as NativeState,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
@@ -26,6 +25,7 @@ import { Settings, Choice, About } from "../features/settings/Settings";
 import { Backup } from "../features/backup/Backup";
 import { syncReminders } from "../integrations/native";
 import { translate } from "../i18n";
+import { TabIcon } from "../components/TabIcon";
 const titles: Record<Route["screen"], string> = {
   agenda: "Agenda",
   catalog: "Cadastros",
@@ -120,7 +120,14 @@ export function AppRoot({ repository: repo }: { repository: Repository }) {
   const active = stack[stack.length - 1]!;
   const outdated =
     p.onboarded &&
-    Date.now() - Date.parse(p.lastBackup ?? "1970-01-01") >
+    Date.now() -
+      Date.parse(
+        p.lastBackup ??
+          repo.db.getAllSync<{ applied_at: string }>(
+            "SELECT applied_at FROM schema_migrations WHERE version=1",
+          )[0]?.applied_at ??
+          new Date().toISOString(),
+      ) >
       p.backupDays * 86400000 &&
     Date.now() - Date.parse(p.backupDismissed ?? "1970-01-01") > 86400000;
   return (
@@ -174,9 +181,18 @@ export function AppRoot({ repository: repo }: { repository: Repository }) {
           {message && (
             <View
               accessibilityLiveRegion="polite"
-              style={{ padding: 16, backgroundColor: colors.accent }}
+              style={{
+                paddingHorizontal: 16,
+                paddingVertical: 4,
+                backgroundColor: colors.accent,
+                flexDirection: "row",
+                alignItems: "center",
+                gap: 8,
+              }}
             >
-              <Label>{message.text}</Label>
+              <View style={{ flex: 1 }}>
+                <Label style={{ fontSize: 14 }}>{message.text}</Label>
+              </View>
               {message.undo && (
                 <Button
                   title="Desfazer"
@@ -186,11 +202,19 @@ export function AppRoot({ repository: repo }: { repository: Repository }) {
                   }}
                 />
               )}
-              <Button
-                title="Fechar aviso"
-                secondary
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel="Fechar aviso"
                 onPress={() => setMessage(null)}
-              />
+                style={{
+                  minHeight: 48,
+                  minWidth: 48,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Label style={{ fontSize: 25 }}>×</Label>
+              </Pressable>
             </View>
           )}
           {!p.onboarded ? (
@@ -244,10 +268,12 @@ export function AppRoot({ repository: repo }: { repository: Repository }) {
               )}
               {stack.length === 1 && (
                 <View style={{ borderTopWidth: 1, borderColor: colors.border }}>
-                  <ScrollView
-                    horizontal
-                    contentContainerStyle={{ padding: 6, gap: 4 }}
-                    showsHorizontalScrollIndicator={false}
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      paddingVertical: 5,
+                      paddingHorizontal: 4,
+                    }}
                   >
                     {(
                       [
@@ -278,9 +304,11 @@ export function AppRoot({ repository: repo }: { repository: Repository }) {
                         }}
                         onPress={() => go(tab.route)}
                         style={{
-                          minHeight: 52,
-                          minWidth: 72,
-                          padding: 12,
+                          minHeight: 60,
+                          flex: 1,
+                          padding: 4,
+                          alignItems: "center",
+                          gap: 3,
                           justifyContent: "center",
                           borderRadius: 16,
                           backgroundColor:
@@ -290,12 +318,21 @@ export function AppRoot({ repository: repo }: { repository: Repository }) {
                               : colors.bg,
                         }}
                       >
-                        <Label style={{ fontSize: 14, fontWeight: "600" }}>
+                        <TabIcon
+                          name={tab.title}
+                          color={
+                            active.screen === tab.route.screen &&
+                            active.kind === tab.route.kind
+                              ? colors.ink
+                              : colors.muted
+                          }
+                        />
+                        <Label style={{ fontSize: 11, fontWeight: "600" }}>
                           {tab.title}
                         </Label>
                       </Pressable>
                     ))}
-                  </ScrollView>
+                  </View>
                 </View>
               )}
             </>
