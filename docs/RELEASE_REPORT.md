@@ -38,4 +38,6 @@ O build Android foi validado no GitHub; o ambiente local recriado não retém o 
 
 ## Candidato com agenda reformulada — em validação
 
-O código após a versão experimental adiciona calendário e timeline, perfil da cliente, filtros de estoque, gráfico mensal e backup direto em pasta. Typecheck/lint e **52 testes (37 + 15)** passaram localmente. Android versionCode incrementado para 2. O CI procura os quatro secrets do proprietário e usa assinatura persistente quando completos; não promove assinatura debug a estável. O APK publicado acima continua sendo o anterior até o próximo resultado de build/aceite.
+O código após a versão experimental adiciona calendário e timeline, perfil da cliente, filtros de estoque, gráfico mensal e backup direto em pasta. Typecheck/lint e **54 testes (38 + 16)** passaram localmente. Android versionCode incrementado para 2. O CI procura os quatro secrets do proprietário e usa assinatura persistente quando completos; não promove assinatura debug a estável. O APK publicado acima continua sendo o anterior até o próximo resultado de build/aceite.
+
+Revisão do candidato corrigiu duas regressões com testes: datas sem meia-noite por horário de verão não derrubam a agenda; fechar a busca remove o filtro global que ficaria invisível.

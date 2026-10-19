@@ -358,3 +358,17 @@ test("stock filters separate low and depleted materials", () => {
   expect(screen.getByText("Gel baixo")).toBeTruthy();
   expect(screen.queryByText("Esmalte esgotado")).toBeNull();
 });
+test("closing global search clears its hidden filter and returns to the selected day", () => {
+  const r = repo();
+  r.setPreferences({ onboarded: true });
+  render(<AppRoot repository={r} />);
+  fireEvent.press(screen.getByText("Buscar"));
+  fireEvent.changeText(
+    screen.getByLabelText("Buscar em tudo"),
+    "No matching client",
+  );
+  expect(screen.getByText("Agenda sem resultados")).toBeTruthy();
+  fireEvent.press(screen.getByText("Buscar"));
+  expect(screen.queryByLabelText("Buscar em tudo")).toBeNull();
+  expect(screen.getByLabelText("Agendar às 08:00")).toBeTruthy();
+});

@@ -1,14 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { FlatList, View, Pressable } from "react-native";
 import { useApp, zone, type Route } from "../../app/context";
-import {
-  Label,
-  Button,
-  Field,
-  Card,
-  Row,
-  Money,
-} from "../../components/ui";
+import { Label, Button, Field, Card, Row, Money } from "../../components/ui";
 import { normalize, localDateTime } from "../../domain/rules";
 import { dateLabel, timeLabel, dayKey, nextDay } from "./dates";
 import type { Appointment } from "../../domain/models";
@@ -249,7 +242,14 @@ export function Agenda({
               () => run(() => repo.setPreferences({ view: "week" })),
               p.view === "week",
             )}
-            {chip("Buscar", () => setSearch(!search), search)}
+            {chip(
+              "Buscar",
+              () => {
+                if (search) setQuery("");
+                setSearch(!search);
+              },
+              search,
+            )}
           </View>
           <Pressable
             accessibilityRole="button"

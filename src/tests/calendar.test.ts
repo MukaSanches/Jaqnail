@@ -60,3 +60,13 @@ test("timeline includes appointments continuing from previous day", () => {
   );
   assert.ok(rows.some((r) => r.kind === "appointment" && r.minute === 0));
 });
+test("midnight DST transitions and skipped civil days do not crash the timeline", () => {
+  assert.doesNotThrow(() =>
+    timelineRows("2018-11-03", [], "America/Sao_Paulo"),
+  );
+  assert.doesNotThrow(() =>
+    timelineRows("2018-11-04", [], "America/Sao_Paulo"),
+  );
+  assert.doesNotThrow(() => timelineRows("2026-03-08", [], "America/Havana"));
+  assert.deepEqual(timelineRows("2011-12-30", [], "Pacific/Apia"), []);
+});

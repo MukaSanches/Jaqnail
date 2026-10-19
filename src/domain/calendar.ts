@@ -24,13 +24,33 @@ export function calendarCells(day: string) {
 export type TimelineRow =
   | { kind: "appointment"; id: string; minute: number; startsAt: string }
   | { kind: "free"; id: string; minute: number; startsAt: string };
+const boundaries = new Map<string, number>();
+// Locate the first instant of a civil day. Some IANA transitions remove
+// midnight (or an entire date), so constructing 00:00 is not reliable.
+function dayBoundary(day: string, zone: string) {
+  const key = zone + day;
+  const cached = boundaries.get(key);
+  if (cached !== undefined) return cached;
+  const center = Date.parse(day + "T00:00:00Z");
+  let low = center - 2 * 86400000,
+    high = center + 2 * 86400000;
+  while (low < high) {
+    const middle = Math.floor((low + high) / 2);
+    if (formatInTimeZone(middle, zone, "yyyy-MM-dd") < day) low = middle + 1;
+    else high = middle;
+  }
+  if (boundaries.size >= 64) boundaries.delete(boundaries.keys().next().value!);
+  boundaries.set(key, low);
+  return low;
+}
 export function timelineRows(
   day: string,
   appointments: Busy[],
   zone: string,
 ): TimelineRow[] {
-  const start = Date.parse(localDateTime(day, "00:00", zone)),
-    end = Date.parse(localDateTime(add(day, 1), "00:00", zone));
+  const start = dayBoundary(day, zone),
+    end = dayBoundary(add(day, 1), zone);
+  if (start === end) return [];
   const rows: TimelineRow[] = appointments
     .filter(
       (a) =>
@@ -49,11 +69,16 @@ export function timelineRows(
             Number(formatInTimeZone(a.startsAt, zone, "m")),
     }));
   for (let hour = 8; hour < 21; hour++) {
-    const startsAt = localDateTime(
-      day,
-      `${String(hour).padStart(2, "0")}:00`,
-      zone,
-    );
+    let startsAt: string;
+    try {
+      startsAt = localDateTime(
+        day,
+        `${String(hour).padStart(2, "0")}:00`,
+        zone,
+      );
+    } catch {
+      continue;
+    }
     if (!conflict(startsAt, 30, appointments))
       rows.push({
         kind: "free",
